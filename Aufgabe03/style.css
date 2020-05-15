@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
 body {
     background-image: url('bg.png');
@@ -6,11 +7,12 @@ body {
     font-size: 0.9em;
 }
 nav {
+    position: -webkit-sticky;
     position: sticky;
     top: -5px;
-    left: 70%;
+    left: 69%;
     margin-top: -10px;
-    width: 218px;
+    width: 216px;
     height: 20px;
     background-color: black;
     color: white;
@@ -29,10 +31,12 @@ nav a:hover{
     color: #ff7f00;
 }
 nav a:active{
-    color: #ff0000;
+    color: #960000;
 }
 #aktuell {
-    color: #f21325;
+    color: #960000;
+    font-weight: bold;
+    letter-spacing: -1px;
 }
 main {
     max-width: 800px;
@@ -77,6 +81,8 @@ h1 {
     font-size: 11.5em;
     font-weight: 900;
     letter-spacing: -10px;
+    -webkit-filter: drop-shadow(0px 0px -5px #222);
+    filter: drop-shadow(0px 0px -5px #222);
 }
 
 h2 {
@@ -96,10 +102,10 @@ h3{
 }
 .embed-container { 
     position: relative; padding-bottom:56.25%; height:0; overflow: hidden; max-width: 100%; 
+} 
+.embed-container iframe, .embed-container object, .embed-container embed { 
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
 }
- .embed-container iframe, .embed-container object, .embed-container embed {
-     position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    }
 video{
     margin: auto;
 }
@@ -111,4 +117,110 @@ img{
     margin: auto;
      width: 800px;
      height: 485px;
+}
+form{
+    margin-top: 22%;
+    border: none;
+
+}
+fieldset{
+    border: none;
+}
+fieldset p{
+    color: rgb(187, 187, 187);
+}
+#datenschutz {
+    color: rgb(187, 187, 187);
+    text-decoration: underline;
+}
+#datenschutz:hover {
+    color: #ff7f00;
+    text-decoration: none;
+}
+
+#datenschutz:active {
+    color: #960000;
+    text-decoration: none;
+}
+
+
+input, textarea{
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    background-color: rgb(187, 187, 187);
+    color: #ffffff;
+    padding: 5px;
+    margin: 5px;
+}
+textarea{
+   width:97%;
+}
+#submit{
+    margin-top:-10px;
+}
+#absendungsarea{
+    margin-top: -10px;
+}
+#contacth{
+    margin-left:165px;
+}
+#about_meh{
+    margin-left: 90px;
+}
+#la_sticker{
+    width: 150px;
+    -webkit-filter: drop-shadow(2px -1px 3px rgb(22, 22, 22));
+    filter: drop-shadow(2px -1px 3px rgb(22, 22, 22));
+    rotate: -15deg;
+    margin-left: 150px;
+    margin-top: -35px;
+    animation-name: sticker;
+    animation-duration: 1.5s;
+    float:none;
+}
+header{
+    margin-bottom: -100px;
+}
+
+.social-media-nav{
+    margin: auto;
+    margin-top: -70px;
+    text-align: center;
+    float:none;
+    position: relative;
+    z-index: 2;
+    font-size:2em;
+}
+.social-media-icons{
+    padding: 0;
+    list-style: none;
+    margin: 1em;
+}
+li {
+    display: inline-block;
+    margin: 0em 0.5em;
+    position: relative;
+
+}
+
+i {
+    background-image: url('bg.png');
+    color: transparent;
+     -webkit-text-fill-color: transparent;
+     -webkit-background-clip: text;
+     -moz-background-clip: text;
+     background-clip: text;
+    position: absolute;
+    top: 21px;
+    left: 21px;
+   
+}
+.social-media-nav a:hover{
+    font-size:2.5rem;
+}
+
+@keyframes sticker{
+    from{width:500px; transform:translateX(-100%); transform: translateY(100%); rotate: 180deg}
+    to {width:150px; transform:translateX(0%); transform: translateY(0%); rotate:-15deg}
 }
