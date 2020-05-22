@@ -296,13 +296,12 @@ h2 {
 }
 
 .kategoriewahl {
-  margin: auto;
-  margin-top: -317px;
+  margin: -317px auto 50px auto;
 }
 
 .kategoriewahl_shop {
   margin: auto;
-  margin-top: -540px;
+  margin: -540px auto 20px auto;
 }
 
 .lifestyle-kategorie {
