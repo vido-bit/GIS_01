@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+@font-face {
+  font-family: 'College Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("College Bold"), url("COLLEGEB.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'Zerocalcare Script NC Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local("Zerocalcare Script NC Bold"), url("Zerocalcare Script Bold.woff") format("woff");
+}
+
+body {
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9em;
+  max-height: 1080px;
+  max-width: 1080px;
+}
+
+.big_header {
+  margin: auto;
+  width: 800px;
+  position: -webkit-sticky;
+  position: sticky;
+  margin-bottom: -100px;
+  margin-top: -45px;
+}
+
+.header_bild {
+  width: 700px;
+  margin: auto;
+  margin-top: -273px;
+  margin-left: 50px;
+  z-index: 5;
+}
+
+nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -5px;
+  left: 69%;
+  margin-top: -10px;
+  width: 216px;
+  height: 20px;
+  background-color: black;
+  color: white;
+  text-align: right;
+  padding: 7px;
+  border-radius: 0px 0px 15px 15px;
+  z-index: 50;
+}
+
+nav a {
+  margin: auto;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #ff7f00;
+}
+
+nav a:active {
+  color: #960000;
+}
+
+#aktuell {
+  background-color: #960000;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.header {
+  /* background-color: #960000;
+   */
+  height: 700px;
+  width: 700px;
+  border-radius: 100%;
+  margin-top: -273px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: scale();
+          transform: scale();
+}
+
+header {
+  -webkit-transform: scale(50%);
+          transform: scale(50%);
+  z-index: 5;
+  margin-top: -115px;
+}
+
+.infotext {
+  margin-top: -148px;
+  background-image: url("../Aufgabe03/bg.png");
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-left: 406px;
+}
+
+.infotext p {
+  margin-top: -30px;
+  margin-right: 190px;
+  font-size: 12px;
+}
+
+h1, .infotext {
+  /* background-image: url('../AUfgabe03/bg.png');
+  */
+  color: white;
+  /*   -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+*/
+}
+
+h1 {
+  font-family: 'Zerocalcare Script NC Bold';
+  margin: -445px auto auto 310px;
+  font-size: 6.6em;
+  font-weight: 300;
+  letter-spacing: 5px;
+  -webkit-filter: drop-shadow(0px 0px -5px #222);
+  filter: drop-shadow(0px 0px -5px #222);
+}
+
+h3 {
+  text-transform: capitalize;
+  font-size: 1.4em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #960000;
+  text-decoration: underline;
+  margin-bottom: -0.4em;
+}
+
+h4 {
+  margin-top: -0.8em;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+video {
+  margin: auto;
+}
+
+#restmuell {
+  margin: auto;
+  width: 800px;
+  height: 485px;
+}
+
+form {
+  margin-top: 22%;
+  border: none;
+}
+
+fieldset {
+  border: none;
+}
+
+fieldset p {
+  color: #bbbbbb;
+}
+
+#datenschutz {
+  color: #bbbbbb;
+  text-decoration: underline;
+}
+
+#datenschutz:hover {
+  color: #ff7f00;
+  text-decoration: none;
+}
+
+#datenschutz:active {
+  color: #960000;
+  text-decoration: none;
+}
+
+input, textarea {
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  background-color: #bbbbbb;
+  color: #ffffff;
+  padding: 5px;
+  margin: 5px;
+}
+
+textarea {
+  width: 97%;
+}
+
+#submit {
+  margin-top: -10px;
+}
+
+#absendungsarea {
+  margin-top: -10px;
+}
+
+#la_sticker {
+  width: 150px;
+  -webkit-filter: drop-shadow(2px -1px 2px #161616);
+  filter: drop-shadow(2px -1px 2px #161616);
+  rotate: -15deg;
+  margin-left: 180px;
+  margin-top: -20px;
+  -webkit-animation-name: sticker;
+          animation-name: sticker;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  float: none;
+}
+
+@-webkit-keyframes sticker {
+  from {
+    width: 500px;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    rotate: 180deg;
+  }
+  to {
+    width: 150px;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    rotate: -15deg;
+  }
+}
+
+@keyframes sticker {
+  from {
+    width: 500px;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    rotate: 180deg;
+  }
+  to {
+    width: 150px;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    rotate: -15deg;
+  }
+}
+
+.produkte {
+  margin: auto;
+  margin-top: 15%;
+  color: white;
+  width: 100%;
+  height: 3400px;
+  text-align: center;
+}
+
+h2 {
+  color: white;
+  font-family: 'College';
+  background-color: black;
+  margin: auto;
+  width: 100%;
+  font-weight: 300;
+  font-size: 3em;
+}
+
+.kategoriewahl {
+  margin: auto;
+  margin-top: -317px;
+}
+
+.kategoriewahl_shop {
+  margin: auto;
+  margin-top: -540px;
+}
+
+.lifestyle-kategorie {
+  position: absolute;
+  z-index: 2;
+  max-width: 540px;
+}
+
+.hygiene-kategorie {
+  position: relative;
+  left: 50%;
+  z-index: 2;
+  max-width: 540px;
+}
+
+img.kategorie {
+  position: absolute;
+  min-width: 180px;
+  max-width: 540px;
+  float: left;
+  margin: auto;
+}
+
+.kategoriebez {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+button.kategoriebez {
+  width: 540px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  margin: auto;
+  background-color: black;
+  color: white;
+  font-family: 'College Bold';
+  font-weight: 300;
+  font-size: 3em;
+  z-index: 2;
+  margin-top: 540px;
+  border: none;
+  padding: 7px 5px 5px 5px;
+}
+
+button.kategoriebez:hover {
+  background-color: #960000;
+}
+
+.alle-produkte {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  grid-gap: 10px;
+  -ms-grid-columns: 270px 270px 270px 270px;
+      grid-template-columns: 270px 270px 270px 270px;
+      grid-template-areas: "img img img img" "<h3> <h3> <h3> <h3>" "<p> <p> <p> <p>" "<h4> <h4> <h4> <h4>" "<button> <button> <button> <button>";
+}
+
+.lifestyle-produkt {
+  width: 270px;
+}
+
+.lifestyle-produkt img {
+  width: 270px;
+  height: 270px;
+  margin: auto;
+}
+
+.hygiene-produkt {
+  width: 270px;
+}
+
+.hygiene-produkt img {
+  width: 270px;
+  height: 270px;
+  margin: auto;
+}
+
+.hygiene-produkt img:hover, .lifestyle-produkt img:hover {
+  position: relative;
+  right: 10%;
+  margin: auto;
+  width: 360px;
+  height: 360px;
+  -webkit-box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.45);
+          box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.45);
+  z-index: 6;
+}
+
+.Artikelbeschr {
+  letter-spacing: normal;
+  width: 270px;
+  top: 270px;
+}
+
+h3 ~ p {
+  font-size: 0.9em;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.close-button {
+  display: block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.close-button > div {
+  position: relative;
+}
+
+.close-button-block {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.close-button-block:before, .close-button-block:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(55% - 4px);
+  display: block;
+  width: 4px;
+  height: 25px;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  background: white;
+  -webkit-transition: all ease-out 280ms;
+  transition: all ease-out 280ms;
+}
+
+.close-button-block:last-of-type {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.close-button .in .close-button-block:before {
+  -webkit-transition-delay: 280ms;
+          transition-delay: 280ms;
+  -webkit-transform: translateX(20px) translateY(-20px) rotate(45deg);
+          transform: translateX(20px) translateY(-20px) rotate(45deg);
+}
+
+.close-button .in .close-button-block:after {
+  -webkit-transition-delay: 280ms;
+          transition-delay: 280ms;
+  -webkit-transform: translateX(-22px) translateY(-22px) rotate(-45deg);
+          transform: translateX(-22px) translateY(-22px) rotate(-45deg);
+}
+
+.close-button .out {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.close-button .out .close-button-block:before {
+  -webkit-transform: translateX(-5px) translateY(5px) rotate(45deg);
+          transform: translateX(-5px) translateY(5px) rotate(45deg);
+}
+
+.close-button .out .close-button-block:after {
+  -webkit-transform: translateX(5px) translateY(5px) rotate(-45deg);
+          transform: translateX(5px) translateY(5px) rotate(-45deg);
+}
+
+.close-button:hover .in .close-button-block:before {
+  -webkit-transform: translateX(-5px) translateY(5px) rotate(45deg);
+          transform: translateX(-5px) translateY(5px) rotate(45deg);
+}
+
+.close-button:hover .in .close-button-block:after {
+  -webkit-transform: translateX(5px) translateY(5px) rotate(-45deg);
+          transform: translateX(5px) translateY(5px) rotate(-45deg);
+}
+
+.close-button:hover .out .close-button-block:before {
+  -webkit-transform: translateX(-20px) translateY(20px) rotate(45deg);
+          transform: translateX(-20px) translateY(20px) rotate(45deg);
+}
+
+.close-button:hover .out .close-button-block:after {
+  -webkit-transform: translateX(20px) translateY(20px) rotate(-45deg);
+          transform: translateX(20px) translateY(20px) rotate(-45deg);
+}
+/*# sourceMappingURL=style.css.map */
