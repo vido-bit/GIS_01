@@ -376,7 +376,7 @@ margin: auto;
   position: sticky;
   top: 0px;
 }
-button.kategoriebez{
+button.kategoriebez, button.kategoriebez_lifestylestart{
 width: 540px;
 position: sticky;
 top:0px;
@@ -409,10 +409,31 @@ padding: 7px 5px 5px 5px;
 }
 
 }
-button.kategoriebez:hover{
+button.kategoriebez:hover, button.kategoriebez_lifestylestart:hover{
 
 background-color: #960000;
 
+}
+
+.lifestyle-kategorie button.kategoriebez{
+  @include Mobile{
+    position: relative;
+    left: 50vw;
+  }
+  @include iPhoneSE{
+    position: relative;
+    left: 0;
+  }
+}
+.lifestyle-kategorie button.kategoriebez_lifestylestart{
+  @include Mobile{
+    position: relative;
+    left: 0;
+  }
+  @include iPhoneSE{
+    position: relative;
+    left: 0;
+  }
 }
 .kategoriebez#aktuell{
   @include Mobile{

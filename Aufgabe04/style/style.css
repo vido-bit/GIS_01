@@ -467,7 +467,7 @@ img.kategorie {
   top: 0px;
 }
 
-button.kategoriebez {
+button.kategoriebez, button.kategoriebez_lifestylestart {
   width: 540px;
   position: -webkit-sticky;
   position: sticky;
@@ -485,7 +485,7 @@ button.kategoriebez {
 }
 
 @media (max-width: 1112px) {
-  button.kategoriebez {
+  button.kategoriebez, button.kategoriebez_lifestylestart {
     position: relative;
     width: 50vw;
     margin: auto;
@@ -493,7 +493,7 @@ button.kategoriebez {
 }
 
 @media (max-width: 768px) {
-  button.kategoriebez {
+  button.kategoriebez, button.kategoriebez_lifestylestart {
     position: relative;
     width: 50vw;
     margin: auto;
@@ -502,15 +502,43 @@ button.kategoriebez {
 }
 
 @media (max-width: 320px) {
-  button.kategoriebez {
+  button.kategoriebez, button.kategoriebez_lifestylestart {
     position: relative;
     width: 100vw;
     margin: auto;
   }
 }
 
-button.kategoriebez:hover {
+button.kategoriebez:hover, button.kategoriebez_lifestylestart:hover {
   background-color: #960000;
+}
+
+@media (max-width: 768px) {
+  .lifestyle-kategorie button.kategoriebez {
+    position: relative;
+    left: 50vw;
+  }
+}
+
+@media (max-width: 320px) {
+  .lifestyle-kategorie button.kategoriebez {
+    position: relative;
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .lifestyle-kategorie button.kategoriebez_lifestylestart {
+    position: relative;
+    left: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .lifestyle-kategorie button.kategoriebez_lifestylestart {
+    position: relative;
+    left: 0;
+  }
 }
 
 @media (max-width: 768px) {
