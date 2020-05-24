@@ -341,7 +341,7 @@ font-size: 3em;
   }
 }
 
-#handykategorie{
+.handykategorie{
   @include Mobile{
     display: none;
   }
@@ -350,7 +350,7 @@ font-size: 3em;
   }
 }
 
-img.kategorie{
+img.kategorie, img.handykategorie{
 position: absolute;
 min-width: 180px;
 max-width: 540px;

@@ -420,18 +420,18 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  #handykategorie {
+  .handykategorie {
     display: none;
   }
 }
 
 @media (max-width: 320px) {
-  #handykategorie {
+  .handykategorie {
     display: none;
   }
 }
 
-img.kategorie {
+img.kategorie, img.handykategorie {
   position: absolute;
   min-width: 180px;
   max-width: 540px;
@@ -440,14 +440,14 @@ img.kategorie {
 }
 
 @media (max-width: 1112px) {
-  img.kategorie {
+  img.kategorie, img.handykategorie {
     position: relative;
     width: 50vw;
   }
 }
 
 @media (max-width: 768px) {
-  img.kategorie {
+  img.kategorie, img.handykategorie {
     position: relative;
     min-width: 100vw;
     margin: auto;
@@ -455,7 +455,7 @@ img.kategorie {
 }
 
 @media (max-width: 320px) {
-  img.kategorie {
+  img.kategorie, img.handykategorie {
     position: relative;
     width: 100vw;
   }
