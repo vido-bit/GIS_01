@@ -674,6 +674,27 @@ h3 ~ p {
   font-size: 0.9em;
 }
 
+.shopping-cart > a > img {
+  width: 4%;
+  position: relative;
+  top: -53px;
+  left: 48%;
+  z-index: 8;
+}
+
+@media (max-width: 1112px) {
+  .shopping-cart > a > img {
+    width: 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .shopping-cart > a > img {
+    width: 6%;
+    top: -113px;
+  }
+}
+
 /*
   $button-size: 40px;
   $close-width: ($button-size / 10);
