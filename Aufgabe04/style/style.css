@@ -55,7 +55,7 @@ body {
   margin: auto;
   margin-top: -273px;
   margin-left: 50px;
-  z-index: 5;
+  z-index: 15;
 }
 
 nav {
@@ -102,6 +102,11 @@ nav a:active {
   }
 }
 
+.main {
+  position: relative;
+  z-index: 20;
+}
+
 .header {
   /* background-color: #960000;
    */
@@ -116,9 +121,10 @@ nav a:active {
 }
 
 header {
+  position: relative;
   -webkit-transform: scale(50%);
           transform: scale(50%);
-  z-index: 5;
+  z-index: 15px;
   margin-top: -115px;
 }
 
@@ -301,18 +307,24 @@ h2 {
 }
 
 .kategoriewahl {
+  position: relative;
+  z-index: 0;
   margin: -860px auto 50px auto;
 }
 
 @media (max-width: 768px) {
   .kategoriewahl {
     margin: auto;
+    z-index: -1;
   }
 }
 
 .kategoriewahl_shop {
+  position: relative;
+  z-index: 0;
   margin: auto;
   margin: -860px auto 20px auto;
+  z-index: -1;
 }
 
 @media (max-width: 1112px) {
@@ -700,7 +712,7 @@ h3 ~ p {
   width: 4%;
   position: relative;
   top: 480px;
-  left: 47%;
+  left: 48%;
   z-index: 8;
 }
 
@@ -714,7 +726,8 @@ h3 ~ p {
 @media (max-width: 768px) {
   .shopping-cart > a > img {
     width: 6%;
-    top: -150px;
+    top: 15px;
+    left: -5%;
   }
 }
 
@@ -751,7 +764,7 @@ h3 ~ p {
     width: 50vw;
     margin: auto;
     height: 64px;
-    z-index: 13;
+    z-index: 9;
     left: 50vw;
     padding-top: 8px;
     top: calc(-100vw + -77px);
