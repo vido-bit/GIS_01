@@ -30,7 +30,7 @@ $Mobile: 768px;
   }
 }
 
-$iPhoneSE: 320px;
+$iPhoneSE: 660px;
 
 @mixin iPhoneSE {
   @media (max-width: #{$iPhoneSE}) {
@@ -44,14 +44,16 @@ body {
     font-size: 0.9em;
     max-height: 1080px;
     max-width:1080px;
-    @include iPhoneSE{
+    @include iPadPro{
       max-width: 100vw;
     }
     @include Mobile{
       max-width: 100vw;
     }
-    @include iPadPro{
+  
+    @include iPhoneSE{
       max-width: 100vw;
+      padding: 0px 20px 0px 0px;
     }
 }
 
@@ -130,26 +132,14 @@ header{
     display: none;
   }
 }
-
-.infotext{
-    margin-top: -148px;
-    background-image: url('../Aufgabe03/bg.png');
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    margin-left: 406px;
-}
-.infotext p {
-    margin-top: -30px;
-    margin-right: 190px;
-    font-size: 12px;
-}
-h1, .infotext {
-   color: white;
+p{
+  @include iPhoneSE{
+    font-size: 0.8em;
+  }
 }
 
 h1 {
+  color: white;
     font-family: 'Zerocalcare Script NC Bold';
     margin: -445px auto auto 310px;
     font-size: 6.6em;
@@ -168,6 +158,9 @@ h3{
     color: #960000;
     text-decoration: underline;
     margin-bottom: -0.4em;
+    @include iPhoneSE{
+      font-size: 0.8em;
+    }
 }
 h4{
   margin-top:-0.8em;
@@ -187,16 +180,8 @@ form{
     border: none;
 
 }
-fieldset{
-    border: none;
-}
-fieldset p{
-    color: rgb(187, 187, 187);
-}
-#datenschutz {
-    color: rgb(187, 187, 187);
-    text-decoration: underline;
-}
+
+
 #datenschutz:hover {
     color: #ff7f00;
     text-decoration: none;
@@ -253,29 +238,38 @@ textarea{
     text-align: center;
 }
 h2{
+  text-align: center;
+  position: relative;
 color: white;
-font-family: 'College';
-background-color: black;
+font-family: 'College Bold';
 margin: auto;
 width: 100%;
 font-weight: 300;
-font-size: 3em;
+font-size: 1.5em;
+text-decoration: none;
+padding: auto 0;
+@include iPhoneSE{
+  font-size: 0.8em;
+  letter-spacing: -1px;
+  margin: auto;
+}
 }
 
 
 .kategoriewahl{
   
-  margin: -317px auto 50px auto; 
+  margin: -860px auto 50px auto; 
    @include Mobile{
-    margin: auto;
-  }
-  @include iPhoneSE{
     margin: auto;
   }
 }
 .kategoriewahl_shop{
   margin:auto;
-  margin: -540px auto 20px auto;
+  margin: -860px auto 20px auto;
+
+  @include iPadPro{
+    margin: -320px auto 10px auto;
+  }
   @include Mobile{
     margin: auto auto 10px auto;
   }
@@ -290,7 +284,9 @@ font-size: 3em;
 
   @include Mobile{
     position: relative;
-    width: 100vw;
+    margin: 0;
+    float: left;
+
   }
   @include iPhoneSE{
     position: relative;
@@ -312,22 +308,29 @@ font-size: 3em;
   @include Mobile{
     position: relative;
     width: 50vw;
-    left: 0;
   }
-  @include iPhoneSE{
+  
+  }
+  .hygiene-kategorie div.kategoriebez{
     position: relative;
-    width: 50vw;
-    left: 0;
-  }
-  }
-  .hygiene-kategorie button.kategoriebez{
+    top: 540px;
+    z-index: -1;
+  max-width: 530px;
+
+    @include iPadPro{
+      position: relative;
+      top:0;
+    }
+
     @include Mobile{
       position: relative;
-      top: -64px;
+      top: -97px;
+      width: 50vw;
+     
     }
     @include iPhoneSE{
       position: relative;
-      top: 0;
+      top: -67px;
     }
   }
 #hygiene-kategorie{
@@ -337,7 +340,7 @@ font-size: 3em;
   }
   @include iPhoneSE{
     position: relative;
-    top: 63px;
+    top: 50px;
   }
 }
 
@@ -373,10 +376,9 @@ margin: auto;
 }
 }
 .kategoriebez{
-  position: sticky;
   top: 0px;
 }
-button.kategoriebez, button.kategoriebez_lifestylestart{
+div.kategoriebez, div.kategoriebez_lifestylestart{
 width: 540px;
 position: sticky;
 top:0px;
@@ -386,10 +388,11 @@ color: white;
 font-family: 'College Bold';
 font-weight:300;
 font-size: 3em;
-z-index:2;
+z-index:-1;
 margin-top: 540px;
 border:none;
 padding: 7px 5px 5px 5px;
+
 
 @include iPadPro{
   position: relative;
@@ -399,6 +402,8 @@ padding: 7px 5px 5px 5px;
 @include Mobile{
   position: relative;
   width: 50vw;
+  left: 0;
+  float: left;
   margin: auto;
   letter-spacing: -2px;
 }
@@ -409,29 +414,39 @@ padding: 7px 5px 5px 5px;
 }
 
 }
-button.kategoriebez:hover, button.kategoriebez_lifestylestart:hover{
+div.kategoriebez:hover, div.kategoriebez_lifestylestart:hover > h2{
 
 background-color: #960000;
 
 }
 
-.lifestyle-kategorie button.kategoriebez{
+.lifestyle-kategorie div.kategoriebez{
+position: relative;
+margin-bottom: 20px;
+
+
+@include iPadPro{
+  position: relative;
+}
   @include Mobile{
     position: relative;
-    left: 50vw;
   }
   @include iPhoneSE{
     position: relative;
+    float: left;
     left: 0;
+    width: 50vw;
   }
 }
-.lifestyle-kategorie button.kategoriebez_lifestylestart{
+.lifestyle-kategorie div.kategoriebez_lifestylestart{
   @include Mobile{
     position: relative;
     left: 0;
   }
   @include iPhoneSE{
     position: relative;
+    height: 47px;
+    padding: 15px 5px 6px 5px;
     left: 0;
   }
 }
@@ -442,14 +457,12 @@ background-color: #960000;
   }
     @include iPhoneSE{
       position: relative;
-      top:0;
     }
 }
 .kategoriebez#hygiene-button{
   @include Mobile{
     position: absolute;
     left: 50vw;
-
   }
   @include iPhoneSE{
     position: relative;
@@ -459,16 +472,24 @@ background-color: #960000;
 }
 
 .alle-produkte{
+  margin-top: 500px;
 display: inline-grid;
 grid-gap: 10px;
 grid-template-columns: 270px 270px 270px 270px;
-@include Mobile{
- grid-template-columns: 50vw 50vw;
- grid-gap: 10px;
-}
+
 @include iPadPro{
   margin-left: 1vw;
   grid-template-columns: 33vw 33vw 33vw;
+  margin-top: 0;
+}
+  @include Mobile{
+    grid-template-columns: 50vw 50vw;
+    grid-gap: 10px;
+    margin-top: -50px;
+   }
+
+@include iPhoneSE{
+  grid-template-columns: 50%, 50%;
 }
 
 }
@@ -537,21 +558,63 @@ font-size: 0.9em;
 .shopping-cart>a>img {
   width: 4%;
   position: relative;
-  top: -53px;
-  left: 48%;
+  top: 480px;
+  left: 47%;
   z-index: 8;
   @include iPadPro{
     width: 5%;
+    top: -60px;
   }
   @include Mobile{
     width: 6%;
-    top: -113px;
+    top: -150px;
+  @include iPhoneSE{
+    top: -96px;
+    left: 49%;
+  }
 
   }
 
 }
 
+#startseite{
+  @include Mobile{
+    left:0;
+    width: 100%;
+    
+  }
+}
+#hygiene-startseite{
+  width: 540px;
+  margin: auto;
+  color: white;
+  font-family: 'College Bold';
+  font-weight:300;
+  font-size: 3em;
+  z-index:-1;
+  margin-top: 540px;
+  border:none;
+  padding: 7px 5px 5px 5px;
 
+  @include Mobile{
+    position: relative;
+    width: 50vw;
+    margin: auto;
+    height: 64px;
+    z-index: 13;
+    left: 50vw;
+    padding-top: 8px;
+    top:calc(-100vw + -77px);
+  }
+  @include iPhoneSE{
+    width: 100vw;
+    min-width: 100%;
+    left: 0;
+    top: -100vw;
+    height: 47px;
+    padding: 8px 5px 5px 5px;
+  }
+}
   /*
   $button-size: 40px;
   $close-width: ($button-size / 10);
