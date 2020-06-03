@@ -193,7 +193,7 @@ namespace Produkte {
                 _hygP.innerHTML = produkte[_index]._beschreibung;
                 document.getElementById("hygiene-produkt" + _index)?.appendChild(_hygP);
                 let _hygPreis: HTMLHeadingElement = document.createElement("h4");
-                _hygPreis.innerHTML = produkte[_index]._preis + "€";
+                _hygPreis.innerHTML = produkte[_index]._preis.toFixed(2) + "€";
                 document.getElementById("hygiene-produkt" + _index)?.appendChild(_hygPreis);
                 break;
             default:
