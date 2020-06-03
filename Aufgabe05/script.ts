@@ -1,12 +1,12 @@
 namespace Produkte {
-    interface Produkte {
+    interface Produkt {
         _img: string;
         _name: string;
         _beschreibung: string;
         _preis: number;
         _kategorie: string;
     }
-    let shirt: Produkte = {
+    let shirt: Produkt = {
         _img: "lifestyle/la_shirt.png",
         _name: "Shirt",
         _beschreibung: "mit Siebdruck gedruckt",
@@ -14,7 +14,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let socken: Produkte = {
+    let socken: Produkt = {
         _img: "lifestyle/matp_socks.png",
         _name: "Socken",
         _beschreibung: "Für Flächen geeignet",
@@ -22,7 +22,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let cap: Produkte = {
+    let cap: Produkt = {
         _img: "lifestyle/amstercap.png",
         _name: "Cap",
         _beschreibung: "knallige Cap mit feinem Stick",
@@ -30,7 +30,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let spraydose: Produkte = {
+    let spraydose: Produkt = {
         _img: "lifestyle/la_spraydose.png",
         _name: "Spraydose",
         _beschreibung: "color: #960000;",
@@ -38,7 +38,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let clipper: Produkte = {
+    let clipper: Produkt = {
         _img: "lifestyle/la_clipper.jpg",
         _name: "Clipper",
         _beschreibung: "Zum Feuer machen als auch zum Stopfen",
@@ -46,7 +46,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let boxershorts: Produkte = {
+    let boxershorts: Produkt = {
         _img: "lifestyle/boxershorts.png",
         _name: "Boxershorts",
         _beschreibung: "Mit Flachleg-Garantie",
@@ -54,7 +54,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let desinfektionstuecher: Produkte = {
+    let desinfektionstuecher: Produkt = {
         _img: "hygiene/desinfektionstuecher.jpg",
         _name: "Desinfektionstücher",
         _beschreibung: "Für Flächen geeignet",
@@ -62,7 +62,7 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let haendeDesinfektion: Produkte = {
+    let haendeDesinfektion: Produkt = {
         _img: "hygiene/desinfektions_la.jpg",
         _name: "Hände Desinfektionsmittel",
         _beschreibung: "Bitte Hinweis beachten: Dieses Produkt ist für Profis",
@@ -70,7 +70,7 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let mundNasenschutz: Produkte = {
+    let mundNasenschutz: Produkt = {
         _img: "hygiene/amstermask.jpg",
         _name: "Mund- Nasenschutz",
         _beschreibung: "Mund- Nasenschutz im stylischen Amsterdam-Look. Ein echter Hingucker!",
@@ -78,7 +78,7 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let faceShield: Produkte = {
+    let faceShield: Produkt = {
         _img: "hygiene/faceshield.jpg",
         _name: "Faceshield",
         _beschreibung: "Besonders wirksam gegen Corona-Viren",
@@ -86,7 +86,7 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let abcmaske: Produkte = {
+    let abcmaske: Produkt = {
         _img: "hygiene/la_maske.jpg",
         _name: "ABC Maske",
         _beschreibung: "Diese Maske ist äußerst effektiv!",
@@ -94,7 +94,7 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let zahnbuerste: Produkte = {
+    let zahnbuerste: Produkt = {
         _img: "hygiene/la_zahnbuerste.jpg",
         _name: "Zahnbürste inkl. Halter",
         _beschreibung: "Diese Zahnbürste besteht zu über 90% aus nachhaltigem Bambus und kommt mit nützlichem Halter sowie stylischem xxx-Print",
@@ -102,7 +102,7 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let schnelltest: Produkte = {
+    let schnelltest: Produkt = {
         _img: "hygiene/schnelltest.jpg",
         _name: "Corona Schnelltest",
         _beschreibung: "...auch als Schwangerschaftstest verwendbar",
@@ -110,7 +110,7 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let schutzbrille: Produkte = {
+    let schutzbrille: Produkt = {
         _img: "hygiene/schutzbrille.jpg",
         _name: "Schutzbrille",
         _beschreibung: "Schützt die Augen vor Kleinteilen, Sägespänne, Glutfunken, Sperma und <b>Corona!</b>",
@@ -118,14 +118,14 @@ namespace Produkte {
         _kategorie: "hygiene"
     };
 
-    let schutzanzug: Produkte = {
+    let schutzanzug: Produkt = {
         _img: "hygiene/matprotectivesuit.jpg",
         _name: "Schutzanzug",
         _beschreibung: "Der MATProtectiveSuit(TradeMark) ist fürs Übherleben entwickelt",
         _preis: 499.90,
         _kategorie: "hygiene"
     };
-    let longsleeve: Produkte = {
+    let longsleeve: Produkt = {
         _img: "lifestyle/la_kleidung.png",
         _name: "Longsleeve",
         _beschreibung: "Zum Feuer machen als auch zum Stopfen",
@@ -133,7 +133,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let weihnachtspulli: Produkte = {
+    let weihnachtspulli: Produkt = {
         _img: "lifestyle/la_weihnachtspulli.jpg",
         _name: "Weihnachtspulli",
         _beschreibung: "Für jede Jahreszeit",
@@ -141,7 +141,7 @@ namespace Produkte {
         _kategorie: "lifestyle"
     };
 
-    let produkte: Produkte[] = [shirt, cap, socken, spraydose, clipper, boxershorts, longsleeve, weihnachtspulli, desinfektionstuecher, haendeDesinfektion, mundNasenschutz, faceShield, abcmaske, zahnbuerste, schnelltest, schutzbrille, schutzanzug];
+    let produkte: Produkt[] = [shirt, cap, socken, spraydose, clipper, boxershorts, longsleeve, weihnachtspulli, desinfektionstuecher, haendeDesinfektion, mundNasenschutz, faceShield, abcmaske, zahnbuerste, schnelltest, schutzbrille, schutzanzug];
 
     //Produkte einschleifen
     for (let _index: number = 0; _index < produkte.length; _index++) {
