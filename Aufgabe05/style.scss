@@ -210,12 +210,14 @@ p {
   grid-template-columns: auto auto auto auto;
 
   @include iPadPro {
+    margin: auto;
     width: 100%;
     margin-left: 1vw;
     grid-template-columns: auto auto auto;
     margin-top: 0;
   }
   @include Mobile {
+    margin: auto;
     width: 100%;
     grid-template-columns: auto auto;
     grid-gap: 10px;
@@ -223,6 +225,8 @@ p {
   }
 
   @include iPhoneSE {
+    margin: auto;
+    width: 100%;
     grid-template-columns: auto;
   }
 }

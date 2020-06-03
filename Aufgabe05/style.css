@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css");
 @font-face {
-  font-family: 'College Bold';
+  font-family: "College Bold";
   font-style: normal;
   font-weight: normal;
   src: local("College Bold"), url("COLLEGEB.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Zerocalcare Script NC Bold';
+  font-family: "Zerocalcare Script NC Bold";
   font-style: normal;
   font-weight: normal;
   src: local("Zerocalcare Script NC Bold"), url("Zerocalcare Script Bold.woff") format("woff");
@@ -42,7 +42,7 @@ body {
 
 h1 {
   color: white;
-  font-family: 'Zerocalcare Script NC Bold';
+  font-family: "Zerocalcare Script NC Bold";
   margin: -210px auto auto 500px;
   font-size: 3em;
   font-weight: 300;
@@ -57,7 +57,7 @@ h2 {
   text-align: center;
   position: relative;
   color: white;
-  font-family: 'College Bold';
+  font-family: "College Bold";
   margin: auto;
   width: 100%;
   font-weight: 300;
@@ -75,7 +75,7 @@ h2 {
 }
 
 h3 {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 1.4em;
   font-weight: 300;
   color: #960000;
@@ -90,12 +90,12 @@ h3 {
 }
 
 h4 {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   margin-top: -0.5em;
 }
 
 p {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-weight: 200;
   font-size: 0.9em;
 }
@@ -218,7 +218,7 @@ p {
   margin: auto;
   background-color: black;
   color: white;
-  font-family: 'College Bold';
+  font-family: "College Bold";
   font-weight: 300;
   font-size: 3em;
   z-index: -1;
@@ -227,7 +227,9 @@ p {
   padding: 7px 5px 5px 5px;
 }
 
-#lifestyle, #hygiene {
+#lifestyle,
+#hygiene {
+  width: 100%;
   position: relative;
   margin: auto;
   margin-top: -600px;
@@ -238,7 +240,10 @@ p {
 }
 
 @media (max-width: 1080px) {
-  #lifestyle, #hygiene {
+  #lifestyle,
+  #hygiene {
+    margin: auto;
+    width: 100%;
     margin-left: 1vw;
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
@@ -247,7 +252,10 @@ p {
 }
 
 @media (max-width: 768px) {
-  #lifestyle, #hygiene {
+  #lifestyle,
+  #hygiene {
+    margin: auto;
+    width: 100%;
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
     grid-gap: 10px;
@@ -256,7 +264,10 @@ p {
 }
 
 @media (max-width: 660px) {
-  #lifestyle, #hygiene {
+  #lifestyle,
+  #hygiene {
+    margin: auto;
+    width: 100%;
     -ms-grid-columns: auto;
         grid-template-columns: auto;
   }
