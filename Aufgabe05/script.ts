@@ -171,8 +171,8 @@ namespace Produkte {
                 let _lifePreis: HTMLHeadingElement = document.createElement("h4");
                 _lifePreis.innerHTML = produkte[_index]._preis.toFixed(2) + "€";
                 document.getElementById("lifestyle-produkt" + _index)?.appendChild(_lifePreis);
-                //Hygiene-Kategorie
                 break;
+                //Hygiene-Kategorie
             case "hygiene":
                 let _hygDiv: HTMLDivElement = document.createElement("div");
                 _hygDiv.setAttribute("class", "hygiene-div");

@@ -148,8 +148,8 @@ var Produkte;
                 let _lifePreis = document.createElement("h4");
                 _lifePreis.innerHTML = produkte[_index]._preis.toFixed(2) + "€";
                 document.getElementById("lifestyle-produkt" + _index)?.appendChild(_lifePreis);
-                //Hygiene-Kategorie
                 break;
+            //Hygiene-Kategorie
             case "hygiene":
                 let _hygDiv = document.createElement("div");
                 _hygDiv.setAttribute("class", "hygiene-div");
