@@ -199,7 +199,7 @@ function showLifestyle() {
 //document.querySelector("button").addEventListener("click", inWarenkorb);
 let warenAnzahl = 0;
 function handleWarenkorbClick(_click) {
-    console.log("Kliiiick!");
+    console.log("Kliiick!");
     /*  let warenNr: HTMLHeadingElement = document.createElement("h5");
       warenNr.innerHTML = (warenAnzahl + 1).toString()
       document.getElementById("shopping-cart")?.appendChild(warenNr);
