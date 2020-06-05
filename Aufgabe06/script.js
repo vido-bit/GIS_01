@@ -8,7 +8,7 @@ var Produkte;
     function init(_event) {
         loadProducts();
         warenNr = document.createElement("h5");
-        // document.getElementById("shopping-cart")?.appendChild(warenNr);
+        document.getElementById("shopping-cart")?.appendChild(warenNr);
         let lifestyleKategorieDiv = document.querySelector(".lifestyle-kategorie");
         lifestyleKategorieDiv.addEventListener("click", handleCategoryClick.bind(lifestyleKategorieDiv));
         let hygieneKategorieDiv = document.querySelector(".hygiene-kategorie");
@@ -193,6 +193,7 @@ var Produkte;
             //Button hinzufügen
             let newButton = document.createElement("button");
             newButton.innerHTML = "Jetzt kaufen";
+            //hygDiv.appendChild(newButton).innerHTML = "in den Warenkorb";
             newButton.addEventListener("click", handleWarenkorbClick.bind(produkte[index]));
             document.getElementById("lifestyle-produkt" + index)?.appendChild(newButton);
             document.getElementById("hygiene-produkt" + index)?.appendChild(newButton);
@@ -231,15 +232,5 @@ var Produkte;
         document.getElementById("hygiene-button").style.background = "black";
     }
     //document.querySelector("button").addEventListener("click", inWarenkorb);
-    /*
-    function showHygiene(){
-        document.getElementById("hygiene")?.setAttribute("display", "inline-grid");
-        document.getElementById("lifestyle")?.setAttribute("display", "none");
-    }
-    function showLifestyle(){
-        document.getElementById("hygiene")?.setAttribute("display", "none");
-        document.getElementById("lifestyle")?.setAttribute("display", "inline-grid");
-    }
-    */
 })(Produkte || (Produkte = {}));
 //# sourceMappingURL=script.js.map

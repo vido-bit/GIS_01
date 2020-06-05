@@ -227,13 +227,15 @@ p {
   .kategoriewahl {
     margin: auto;
     z-index: 1;
-    margin-top: -190px;
+    top: -190px;
+    margin-bottom: -280px;
   }
 }
 
 @media (max-width: 660px) {
   .kategoriewahl {
-    margin-top: -5px;
+    top: -5px;
+    margin-bottom: -100px;
   }
 }
 
@@ -356,7 +358,8 @@ p {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
     grid-gap: 10px;
-    margin-top: -50px;
+    margin-top: 0px;
+    z-index: 15;
   }
 }
 
@@ -367,6 +370,7 @@ p {
     width: 100%;
     -ms-grid-columns: auto;
         grid-template-columns: auto;
+    z-index: 15;
   }
 }
 
@@ -406,14 +410,14 @@ img.produktbild:hover {
 
 @media (max-width: 768px) {
   #shopping-cart {
-    top: -600px;
+    top: -505px;
     margin-left: 49%;
   }
 }
 
 @media (max-width: 660px) {
   #shopping-cart {
-    top: -580px;
+    top: -486px;
   }
 }
 
@@ -423,5 +427,29 @@ h5 {
   left: 24px;
   font-size: 1.4em;
   font-family: "College Bold";
+}
+
+@media (max-width: 1080px) {
+  h5 {
+    top: -79px;
+    left: 20px;
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  h5 {
+    top: -63px;
+    left: 14px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 660px) {
+  h5 {
+    top: -47px;
+    left: 9px;
+    font-size: 0.8em;
+  }
 }
 /*# sourceMappingURL=style.css.map */

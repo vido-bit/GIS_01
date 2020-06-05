@@ -181,10 +181,12 @@ p {
   @include Mobile {
     margin: auto;
     z-index: 1;
-    margin-top: -190px;
+    top: -190px;
+    margin-bottom: -280px;
   }
   @include iPhoneSE {
-    margin-top: -5px;
+    top: -5px;
+    margin-bottom: -100px;
   }
 }
 .lifestyle-kategorie {
@@ -282,13 +284,15 @@ p {
     width: 100%;
     grid-template-columns: auto auto;
     grid-gap: 10px;
-    margin-top: -50px;
+    margin-top: 0px;
+    z-index: 15;
   }
 
   @include iPhoneSE {
     margin: auto;
     width: 100%;
     grid-template-columns: auto;
+    z-index: 15;
   }
 }
 
@@ -318,11 +322,11 @@ img.produktbild:hover {
     margin-left: 49%;
   }
   @include Mobile {
-    top: -600px;
+    top: -505px;
     margin-left: 49%;
   }
   @include iPhoneSE {
-    top: -580px;
+    top: -486px;
   }
 }
 h5 {
@@ -331,4 +335,20 @@ h5 {
   left: 24px;
   font-size: 1.4em;
   font-family: "College Bold";
+  
+  @include iPadPro{
+    top: -79px;
+    left:20px;
+    font-size: 1.2em;
+  }
+  @include Mobile{
+    top: -63px;
+    left: 14px;
+    font-size: 1em;
+  }
+  @include iPhoneSE{
+    top: -47px;
+    left: 9px;
+    font-size: 0.8em;
+  }
 }
