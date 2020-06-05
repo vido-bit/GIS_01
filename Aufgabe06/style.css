@@ -416,4 +416,12 @@ img.produktbild:hover {
     top: -580px;
   }
 }
+
+h5 {
+  position: relative;
+  top: -90px;
+  left: 24px;
+  font-size: 1.4em;
+  font-family: "College Bold";
+}
 /*# sourceMappingURL=style.css.map */

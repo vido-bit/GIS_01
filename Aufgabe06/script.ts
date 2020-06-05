@@ -8,7 +8,8 @@ namespace Produkte {
     function init(_event: Event): void {
         loadProducts();
         warenNr = document.createElement("h5");
-        document.getElementById("shopping-cart")?.appendChild(warenNr);
+       
+        // document.getElementById("shopping-cart")?.appendChild(warenNr);
         let lifestyleKategorieDiv: HTMLDivElement = <HTMLDivElement>document.querySelector(".lifestyle-kategorie");
         lifestyleKategorieDiv.addEventListener("click", handleCategoryClick.bind(lifestyleKategorieDiv));
         let hygieneKategorieDiv: HTMLDivElement = <HTMLDivElement>document.querySelector(".hygiene-kategorie");
@@ -20,7 +21,7 @@ namespace Produkte {
         name: string;
         beschreibung: string;
         preis: number;
-        _kategorie: string;
+        kategorie: string;
     }
 
     function loadProducts(): void {
@@ -30,7 +31,7 @@ namespace Produkte {
             name: "Shirt",
             beschreibung: "mit Siebdruck gedruckt",
             preis: 19.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let socken: Produkt = {
@@ -38,7 +39,7 @@ namespace Produkte {
             name: "Socken",
             beschreibung: "Für Flächen geeignet",
             preis: 9.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let cap: Produkt = {
@@ -46,7 +47,7 @@ namespace Produkte {
             name: "Cap",
             beschreibung: "knallige Cap mit feinem Stick",
             preis: 29.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let spraydose: Produkt = {
@@ -54,7 +55,7 @@ namespace Produkte {
             name: "Spraydose",
             beschreibung: "color: #960000;",
             preis: 9.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let clipper: Produkt = {
@@ -62,7 +63,7 @@ namespace Produkte {
             name: "Clipper",
             beschreibung: "Zum Feuer machen als auch zum Stopfen",
             preis: 4.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let boxershorts: Produkt = {
@@ -70,7 +71,7 @@ namespace Produkte {
             name: "Boxershorts",
             beschreibung: "Mit Flachleg-Garantie",
             preis: 9.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let desinfektionstuecher: Produkt = {
@@ -78,7 +79,7 @@ namespace Produkte {
             name: "Desinfektionstücher",
             beschreibung: "Für Flächen geeignet",
             preis: 49.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let haendeDesinfektion: Produkt = {
@@ -86,7 +87,7 @@ namespace Produkte {
             name: "Hände Desinfektionsmittel",
             beschreibung: "Bitte Hinweis beachten: Dieses Produkt ist für Profis",
             preis: 99.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let mundNasenschutz: Produkt = {
@@ -94,7 +95,7 @@ namespace Produkte {
             name: "Mund- Nasenschutz",
             beschreibung: "Mund- Nasenschutz im stylischen Amsterdam-Look. Ein echter Hingucker!",
             preis: 9.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let faceShield: Produkt = {
@@ -102,7 +103,7 @@ namespace Produkte {
             name: "Faceshield",
             beschreibung: "Besonders wirksam gegen Corona-Viren",
             preis: 49.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let abcmaske: Produkt = {
@@ -110,7 +111,7 @@ namespace Produkte {
             name: "ABC Maske",
             beschreibung: "Diese Maske ist äußerst effektiv!",
             preis: 299.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let zahnbuerste: Produkt = {
@@ -118,7 +119,7 @@ namespace Produkte {
             name: "Zahnbürste inkl. Halter",
             beschreibung: "Diese Zahnbürste besteht zu über 90% aus nachhaltigem Bambus und kommt mit nützlichem Halter sowie stylischem xxx-Print",
             preis: 9.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let schnelltest: Produkt = {
@@ -126,7 +127,7 @@ namespace Produkte {
             name: "Corona Schnelltest",
             beschreibung: "...auch als Schwangerschaftstest verwendbar",
             preis: 29.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let schutzbrille: Produkt = {
@@ -134,7 +135,7 @@ namespace Produkte {
             name: "Schutzbrille",
             beschreibung: "Schützt die Augen vor Kleinteilen, Sägespänne, Glutfunken, Sperma und <b>Corona!</b>",
             preis: 19.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
 
         let schutzanzug: Produkt = {
@@ -142,14 +143,14 @@ namespace Produkte {
             name: "Schutzanzug",
             beschreibung: "Der MATProtectiveSuit(TradeMark) ist fürs Übherleben entwickelt",
             preis: 499.90,
-            _kategorie: "hygiene"
+            kategorie: "hygiene"
         };
         let longsleeve: Produkt = {
             img: "lifestyle/la_kleidung.png",
             name: "Longsleeve",
             beschreibung: "Zum Feuer machen als auch zum Stopfen",
             preis: 29.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let weihnachtspulli: Produkt = {
@@ -157,63 +158,63 @@ namespace Produkte {
             name: "Weihnachtspulli",
             beschreibung: "Für jede Jahreszeit",
             preis: 39.90,
-            _kategorie: "lifestyle"
+            kategorie: "lifestyle"
         };
 
         let produkte: Produkt[] = [shirt, cap, socken, spraydose, clipper, boxershorts, longsleeve, weihnachtspulli, desinfektionstuecher, haendeDesinfektion, mundNasenschutz, faceShield, abcmaske, zahnbuerste, schnelltest, schutzbrille, schutzanzug];
 
         //Produkte einschleifen
-        for (let _index: number = 0; _index < produkte.length; _index++) {
+        for (let index: number = 0; index < produkte.length; index++) {
 
-            switch (produkte[_index]._kategorie) {
+            switch (produkte[index].kategorie) {
                 //Lifestyle-Kategorie
                 case "lifestyle":
-                    let _lifeDiv: HTMLDivElement = document.createElement("div");
-                    _lifeDiv.setAttribute("class", "lifestyle-div");
-                    _lifeDiv.setAttribute("id", "lifestyle-produkt" + _index);
-                    document.getElementById("lifestyle")?.appendChild(_lifeDiv);
+                    let lifeDiv: HTMLDivElement = document.createElement("div");
+                    lifeDiv.setAttribute("class", "lifestyle-div");
+                    lifeDiv.setAttribute("id", "lifestyle-produkt" + index);
+                    document.getElementById("lifestyle")?.appendChild(lifeDiv);
                     //Produktbild hinzufügen
-                    let _lifeImg: HTMLElement = document.createElement("img");
-                    _lifeImg.setAttribute("src", produkte[_index].img);
-                    _lifeImg.setAttribute("alt", "Lifestyle-Produkt");
-                    _lifeImg.setAttribute("class", "produktbild");
-                    document.getElementById("lifestyle-produkt" + _index)?.appendChild(_lifeImg);
+                    let lifeImg: HTMLElement = document.createElement("img");
+                    lifeImg.setAttribute("src", produkte[index].img);
+                    lifeImg.setAttribute("alt", "Lifestyle-Produkt");
+                    lifeImg.setAttribute("class", "produktbild");
+                    document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeImg);
                     //Produktbezeichnung hinzufügen
-                    let _lifeH3: HTMLHeadingElement = document.createElement("h3");
-                    _lifeH3.innerHTML = produkte[_index].name;
-                    document.getElementById("lifestyle-produkt" + _index)?.appendChild(_lifeH3);
+                    let lifeH3: HTMLHeadingElement = document.createElement("h3");
+                    lifeH3.innerHTML = produkte[index].name;
+                    document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeH3);
                     //Produkt_beschreibung hinzufügen
-                    let _lifeP: HTMLParagraphElement = document.createElement("p");
-                    _lifeP.innerHTML = produkte[_index].beschreibung;
-                    document.getElementById("lifestyle-produkt" + _index)?.appendChild(_lifeP);
+                    let lifeP: HTMLParagraphElement = document.createElement("p");
+                    lifeP.innerHTML = produkte[index].beschreibung;
+                    document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeP);
                     // Preis hinzufügen
-                    let _lifePreis: HTMLHeadingElement = document.createElement("h4");
-                    _lifePreis.innerHTML = produkte[_index].preis.toFixed(2) + "€";
-                    document.getElementById("lifestyle-produkt" + _index)?.appendChild(_lifePreis);
+                    let lifePreis: HTMLHeadingElement = document.createElement("h4");
+                    lifePreis.innerHTML = produkte[index].preis.toFixed(2) + "€";
+                    document.getElementById("lifestyle-produkt" + index)?.appendChild(lifePreis);
                     break;
                 //Hygiene-Kategorie
                 case "hygiene":
-                    let _hygDiv: HTMLDivElement = document.createElement("div");
-                    _hygDiv.setAttribute("class", "hygiene-div");
-                    _hygDiv.setAttribute("id", "hygiene-produkt" + _index);
-                    document.getElementById("hygiene")?.appendChild(_hygDiv);
+                    let hygDiv: HTMLDivElement = document.createElement("div");
+                    hygDiv.setAttribute("class", "hygiene-div");
+                    hygDiv.setAttribute("id", "hygiene-produkt" + index);
+                    document.getElementById("hygiene")?.appendChild(hygDiv);
                     // Produktbild hinzufügen
-                    let _hygImg: HTMLElement = document.createElement("img");
-                    _hygImg.setAttribute("src", produkte[_index].img);
-                    _hygImg.setAttribute("alt", "Hygiene-Produkt");
-                    _hygImg.setAttribute("class", "produktbild");
-                    document.getElementById("hygiene-produkt" + _index)?.appendChild(_hygImg);
+                    let hygImg: HTMLElement = document.createElement("img");
+                    hygImg.setAttribute("src", produkte[index].img);
+                    hygImg.setAttribute("alt", "Hygiene-Produkt");
+                    hygImg.setAttribute("class", "produktbild");
+                    document.getElementById("hygiene-produkt" + index)?.appendChild(hygImg);
                     // Produktbezeichnung hinzufügen
-                    let _hygH3: HTMLHeadingElement = document.createElement("h3");
-                    _hygH3.innerHTML = produkte[_index].name;
-                    document.getElementById("hygiene-produkt" + _index)?.appendChild(_hygH3);
+                    let hygH3: HTMLHeadingElement = document.createElement("h3");
+                    hygH3.innerHTML = produkte[index].name;
+                    document.getElementById("hygiene-produkt" + index)?.appendChild(hygH3);
                     // Produktbeschreibung hinzufügen
-                    let _hygP: HTMLParagraphElement = document.createElement("p");
-                    _hygP.innerHTML = produkte[_index].beschreibung;
-                    document.getElementById("hygiene-produkt" + _index)?.appendChild(_hygP);
-                    let _hygPreis: HTMLHeadingElement = document.createElement("h4");
-                    _hygPreis.innerHTML = produkte[_index].preis.toFixed(2) + "€";
-                    document.getElementById("hygiene-produkt" + _index)?.appendChild(_hygPreis);
+                    let hygP: HTMLParagraphElement = document.createElement("p");
+                    hygP.innerHTML = produkte[index].beschreibung;
+                    document.getElementById("hygiene-produkt" + index)?.appendChild(hygP);
+                    let hygPreis: HTMLHeadingElement = document.createElement("h4");
+                    hygPreis.innerHTML = produkte[index].preis.toFixed(2) + "€";
+                    document.getElementById("hygiene-produkt" + index)?.appendChild(hygPreis);
                     break;
                 default:
                     break;
@@ -221,20 +222,22 @@ namespace Produkte {
             //Button hinzufügen
             let newButton: HTMLButtonElement = document.createElement("button");
             newButton.innerHTML = "Jetzt kaufen";
-            newButton.addEventListener("click", handleWarenkorbClick.bind(produkte[_index]));
-            document.getElementById("lifestyle-produkt" + _index)?.appendChild(newButton);
-            document.getElementById("hygiene-produkt" + _index)?.appendChild(newButton);
+            newButton.addEventListener("click", handleWarenkorbClick.bind(produkte[index]));
+            document.getElementById("lifestyle-produkt" + index)?.appendChild(newButton);
+            document.getElementById("hygiene-produkt" + index)?.appendChild(newButton);
         }
     }
+    //Funktion des "Kaufen"-Buttons
     function handleWarenkorbClick(this: Produkt, _click: MouseEvent): void {
-        warenAnzahl++;
-        console.log(warenAnzahl);
+        //Berechnung des Gesamt-Preises
         preisCounter += this.preis;
-        console.log(preisCounter.toFixed(2) + "€");
+        console.log("Total: " + preisCounter.toFixed(2) + "€");
 
+        //Berechnung der Artikelanzahl im Warenkorb
+        warenAnzahl++;
         warenNr.innerHTML = (warenAnzahl).toString();
-        console.log(warenNr.toString());
     }
+    //Ein-/Ausblenden der Produktkategorien
     function handleCategoryClick(this: HTMLDivElement, _click: MouseEvent): void {
         switch (this.getAttribute("class")) {
             case "hygiene-kategorie":
