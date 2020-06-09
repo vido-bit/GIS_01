@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css");
+@font-face {
+  font-family: "College Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("College Bold"), url("COLLEGEB.woff") format("woff");
+}
+@font-face {
+  font-family: "Zerocalcare Script NC Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Zerocalcare Script NC Bold"), url("Zerocalcare Script Bold.woff") format("woff");
+}
+
+$iPadPro: 1080px;
+
+@mixin iPadPro {
+  @media (max-width: #{$iPadPro}) {
+    @content;
+  }
+}
+
+$Mobile: 768px;
+
+@mixin Mobile {
+  @media (max-width: #{$Mobile}) {
+    @content;
+  }
+}
+
+$iPhoneSE: 660px;
+
+@mixin iPhoneSE {
+  @media (max-width: #{$iPhoneSE}) {
+    @content;
+  }
+}
+header {
+  @include iPadPro {
+    margin-bottom: -600px;
+  }
+  @include Mobile {
+    margin-bottom: -500px;
+  }
+}
+body {
+  max-width: 1080px;
+  margin: auto;
+}
+.big_sticker {
+  position: relative;
+  width: 300px;
+  margin: auto;
+  margin-top: -122px;
+  z-index: 12;
+  margin-left: 36.5%;
+  @include Mobile {
+    margin-left: 30%;
+  }
+  @include iPhoneSE {
+    display: none;
+  }
+}
+
+#aktuell {
+  background-color: #960000;
+  font-weight: bold;
+  letter-spacing: -1px;
+
+  @include Mobile {
+    position: relative;
+  }
+}
+
+h1 {
+  color: white;
+  font-family: "Zerocalcare Script NC Bold";
+  margin: -210px auto auto 500px;
+  font-size: 3em;
+  font-weight: 300;
+  letter-spacing: 5px;
+  -webkit-filter: drop-shadow(0px 0px -5px #222);
+  filter: drop-shadow(0px 0px -5px #222);
+  z-index: 14;
+  position: relative;
+  @include iPadPro {
+    margin: -210px auto auto 50%;
+  }
+  @include Mobile {
+    margin: -210px auto auto 45%;
+  }
+}
+
+h2 {
+  text-align: center;
+  position: relative;
+  color: white;
+  font-family: "College Bold";
+  margin: auto;
+  width: 100%;
+  font-weight: 300;
+  font-size: 1.5em;
+  text-decoration: none;
+  padding: auto 0;
+
+  @include Mobile {
+    font-size: 1.2em;
+  }
+  @include iPhoneSE {
+    font-size: 0.8em;
+    letter-spacing: -1px;
+    margin: auto;
+  }
+}
+h3 {
+  font-family: "Roboto";
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #960000;
+  text-decoration: underline;
+  margin-bottom: -0.4em;
+
+  @include iPhoneSE {
+    font-size: 0.8em;
+  }
+}
+h4 {
+  font-family: "Roboto";
+  margin-top: -0.5em;
+}
+p {
+  font-family: "Roboto";
+  font-weight: 200;
+  font-size: 0.9em;
+}
+
+#la_sticker {
+  width: 75px;
+  -webkit-filter: drop-shadow(2px -1px 2px rgb(22, 22, 22));
+  filter: drop-shadow(2px -1px 2px rgb(22, 22, 22));
+  rotate: -15deg;
+  margin-left: 448px;
+  margin-top: -22px;
+  animation-name: sticker;
+  animation-duration: 1.5s;
+  float: none;
+  z-index: 15;
+  @include iPadPro {
+    margin-left: 43%;
+  }
+  @include Mobile {
+    margin-left: 37%;
+  }
+}
+@keyframes sticker {
+  from {
+    width: 500px;
+    transform: translateX(-100%);
+    transform: translateY(100%);
+    rotate: 180deg;
+  }
+  to {
+    width: 90px;
+    transform: translateX(0%);
+    transform: translateY(0%);
+    rotate: -15deg;
+  }
+}
+
+.kategoriewahl {
+  position: relative;
+  z-index: 0;
+  margin: -187px auto 50px auto;
+
+  @include iPadPro {
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    grid-gap: 0px;
+  }
+  @include Mobile {
+    margin: auto;
+    z-index: 1;
+    top: -190px;
+    margin-bottom: -280px;
+  }
+  @include iPhoneSE {
+    top: -5px;
+    margin-bottom: -100px;
+  }
+}
+.lifestyle-kategorie {
+  position: absolute;
+  z-index: 2;
+  max-width: 540px;
+
+  @include iPadPro {
+    position: relative;
+    max-width: 50vw;
+  }
+
+  @include Mobile {
+    position: relative;
+    margin: 0;
+    float: left;
+  }
+  @include iPhoneSE {
+    position: relative;
+    width: 100vw;
+  }
+}
+.hygiene-kategorie {
+  margin: auto;
+  position: relative;
+  left: 25%;
+  z-index: 2;
+  max-width: 540px;
+  margin-bottom: -300px;
+
+  @include iPadPro {
+    position: relative;
+    max-width: 50vw;
+    float: left;
+    left: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  @include Mobile {
+    position: relative;
+    width: 50vw;
+  }
+}
+#hygiene-bild {
+  @include iPadPro {
+  }
+}
+.kategorie {
+  @include iPadPro {
+    max-width: 540px;
+    width: 50vw;
+    height: auto;
+    margin: 0;
+  }
+}
+.kategoriebez {
+  position: relative;
+  width: 530px;
+  top: -544px;
+  margin: auto;
+  background-color: black;
+  color: white;
+  font-family: "College Bold";
+  font-weight: 300;
+  font-size: 3em;
+  z-index: -1;
+  margin-top: 540px;
+  border: none;
+  padding: 7px 5px 5px 5px;
+  @include iPadPro {
+    max-width: 540px;
+    width: 50vw;
+  }
+}
+
+#lifestyle,
+#hygiene {
+  width: 100%;
+  position: relative;
+  margin: auto;
+  margin-top: -600px;
+  display: none;
+  grid-gap: 10px;
+  grid-template-columns: auto auto auto auto;
+
+  @include iPadPro {
+    margin: auto;
+    width: 100%;
+    margin-left: 1vw;
+    grid-template-columns: auto auto auto;
+    margin-top: 0;
+  }
+  @include Mobile {
+    margin: auto;
+    width: 100%;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    margin-top: 0px;
+    z-index: 15;
+  }
+
+  @include iPhoneSE {
+    margin: auto;
+    width: 100%;
+    grid-template-columns: auto;
+    z-index: 15;
+  }
+}
+
+.produktbild {
+  max-width: 270px;
+}
+
+img.produktbild:hover {
+  position: relative;
+  margin: auto;
+  width: 360px;
+  box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.45);
+  z-index: 6;
+  @include Mobile {
+    width: 60%;
+  }
+}
+
+#shopping-cart {
+  position: relative;
+  width: 5%;
+  margin: auto;
+  z-index: 5;
+  top: -370px;
+  @include iPadPro {
+    top: -660px;
+    margin-left: 49%;
+  }
+  @include Mobile {
+    top: -505px;
+    margin-left: 49%;
+  }
+  @include iPhoneSE {
+    top: -486px;
+  }
+}
+h5 {
+  position: relative;
+  top: -90px;
+  left: 24px;
+  font-size: 1.4em;
+  font-family: "College Bold";
+  
+  @include iPadPro{
+    top: -79px;
+    left:20px;
+    font-size: 1.2em;
+  }
+  @include Mobile{
+    top: -63px;
+    left: 14px;
+    font-size: 1em;
+  }
+  @include iPhoneSE{
+    top: -47px;
+    left: 9px;
+    font-size: 0.8em;
+  }
+}
