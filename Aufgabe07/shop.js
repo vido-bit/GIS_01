@@ -13,8 +13,8 @@ var Produkte;
         let hygieneKategorieDiv = document.querySelector(".hygiene-kategorie");
         hygieneKategorieDiv.addEventListener("click", handleCategoryClick.bind(hygieneKategorieDiv));
         //Produkte einschleifen
-        for (let index = 0; index < JSON.parse(myJSONprodukte).length; index++) {
-            switch (JSON.parse(myJSONprodukte)[index].kategorie) {
+        for (let index = 0; index < Produkte.jsonObj.length; index++) {
+            switch (Produkte.jsonObj[index].kategorie) {
                 //Lifestyle-Kategorie
                 case "lifestyle":
                     let lifeDiv = document.createElement("div");
@@ -23,7 +23,7 @@ var Produkte;
                     document.getElementById("lifestyle")?.appendChild(lifeDiv);
                     //Produktbild hinzufügen
                     let lifeImg = document.createElement("img");
-                    lifeImg.setAttribute("src", JSON.parse(myJSONprodukte)[index].img);
+                    lifeImg.setAttribute("src", JSON.parse(Produkte.jsonObj)[index].img);
                     lifeImg.setAttribute("alt", "Lifestyle-Produkt");
                     lifeImg.setAttribute("class", "produktbild");
                     document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeImg);

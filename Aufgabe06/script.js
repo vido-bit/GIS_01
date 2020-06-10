@@ -46,7 +46,7 @@ var Produkte;
         let clipper = {
             img: "lifestyle/la_clipper.jpg",
             name: "Clipper",
-            beschreibung: "Zum Feuer machen als auch zum Stopfen",
+            beschreibung: "Feuer machen. Stylisch.",
             preis: 4.90,
             kategorie: "lifestyle"
         };
@@ -123,7 +123,7 @@ var Produkte;
         let longsleeve = {
             img: "lifestyle/la_kleidung.png",
             name: "Longsleeve",
-            beschreibung: "Zum Feuer machen als auch zum Stopfen",
+            beschreibung: "Ein Hingucker, der gleichzeitig bequem ist.",
             preis: 29.90,
             kategorie: "lifestyle"
         };

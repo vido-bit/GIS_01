@@ -1,15 +1,14 @@
 "use strict";
-var Warenkorb;
-(function (Warenkorb) {
-    console.log("START");
+var Produkte;
+(function (Produkte) {
+    Produkte.jsonObj = [];
     communicate("products.json");
-    console.log("END");
     async function communicate(_url) {
         let response = await fetch("products.json");
-        let jsonObj = await response.json();
-        console.log("Response", jsonObj);
+        Produkte.jsonObj = await response.json();
+        console.log("Response", Produkte.jsonObj);
         //  let produkte: Produkt[] = JSON.parse(jsonObj);
         // console.log("Produkte:", produkte);
     }
-})(Warenkorb || (Warenkorb = {}));
+})(Produkte || (Produkte = {}));
 //# sourceMappingURL=cart.js.map

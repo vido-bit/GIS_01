@@ -17,9 +17,9 @@ namespace Produkte {
         hygieneKategorieDiv.addEventListener("click", handleCategoryClick.bind(hygieneKategorieDiv));
 
         //Produkte einschleifen
-        for (let index: number = 0; index < JSON.parse(myJSONprodukte).length; index++) {
+        for (let index: number = 0; index < jsonObj.length; index++) {
 
-            switch (JSON.parse(myJSONprodukte)[index].kategorie) {
+            switch (jsonObj[index].kategorie) {
                 //Lifestyle-Kategorie
                 case "lifestyle":
                     let lifeDiv: HTMLDivElement = document.createElement("div");
@@ -28,7 +28,7 @@ namespace Produkte {
                     document.getElementById("lifestyle")?.appendChild(lifeDiv);
                     //Produktbild hinzufügen
                     let lifeImg: HTMLElement = document.createElement("img");
-                    lifeImg.setAttribute("src", JSON.parse(myJSONprodukte)[index].img);
+                    lifeImg.setAttribute("src", JSON.parse(jsonObj)[index].img);
                     lifeImg.setAttribute("alt", "Lifestyle-Produkt");
                     lifeImg.setAttribute("class", "produktbild");
                     document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeImg);
