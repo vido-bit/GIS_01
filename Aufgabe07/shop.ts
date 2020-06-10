@@ -1,7 +1,5 @@
 namespace Produkte {
 
-    let myJSONprodukte: string = JSON.stringify(produkte);
-
     window.addEventListener("load", init);
 
     let warenAnzahl: number = 0;
@@ -84,7 +82,7 @@ namespace Produkte {
         }
     }
     //Funktion des "Kaufen"-Buttons
-    function handleWarenkorbClick(this: Produkt, _click: MouseEvent): void {
+    function handleWarenkorbClick(this: Produkte.Produkt, _click: MouseEvent): void {
         //Berechnung des Gesamt-Preises
         preisCounter += this.preis;
         console.log("Total: " + preisCounter.toFixed(2) + "€");
