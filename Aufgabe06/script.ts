@@ -26,6 +26,7 @@ namespace Produkte {
         kategorie: string;
     }
 
+
     function loadProducts(): void {
 
         let shirt: Produkt = {

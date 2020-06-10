@@ -11,12 +11,11 @@ namespace Produkte {
     }
 
 
-    communicate("products.json");
 
-    async function communicate(_url: RequestInfo): Promise<void> {
+    export async function communicate(_url: RequestInfo): Promise<void> {
         let response: Response = await fetch("products.json");
         jsonObj = await response.json();
-        console.log("Response", jsonObj);
+        //console.log("Response", jsonObj);
         //  let produkte: Produkt[] = JSON.parse(jsonObj);
         // console.log("Produkte:", produkte);
     }

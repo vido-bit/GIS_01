@@ -6,8 +6,8 @@ namespace Produkte {
     let preisCounter: number = 0;
     let warenNr: HTMLHeadingElement;
 
-
-    function init(_event: Event): void {
+    async function init(_event: Event): Promise<void> {
+        await communicate("products.json");
         warenNr = document.createElement("h5");
         document.getElementById("shopping-cart")?.appendChild(warenNr);
 
@@ -19,54 +19,53 @@ namespace Produkte {
         //Produkte einschleifen
         for (let index: number = 0; index < jsonObj.length; index++) {
 
+            let newDiv: HTMLDivElement = document.createElement("div");
             switch (jsonObj[index].kategorie) {
                 //Lifestyle-Kategorie
                 case "lifestyle":
-                    let lifeDiv: HTMLDivElement = document.createElement("div");
-                    lifeDiv.setAttribute("class", "lifestyle-div");
-                    lifeDiv.setAttribute("id", "lifestyle-produkt" + index);
-                    document.getElementById("lifestyle")?.appendChild(lifeDiv);
+                    newDiv.setAttribute("class", "lifestyle-div");
+                    newDiv.setAttribute("id", "lifestyle-produkt" + index);
+                    document.getElementById("lifestyle")?.appendChild(newDiv);
                     //Produktbild hinzufügen
                     let lifeImg: HTMLElement = document.createElement("img");
-                    lifeImg.setAttribute("src", JSON.parse(jsonObj)[index].img);
+                    lifeImg.setAttribute("src", (jsonObj)[index].img);
                     lifeImg.setAttribute("alt", "Lifestyle-Produkt");
                     lifeImg.setAttribute("class", "produktbild");
                     document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeImg);
                     //Produktbezeichnung hinzufügen
                     let lifeH3: HTMLHeadingElement = document.createElement("h3");
-                    lifeH3.innerHTML = JSON.parse(myJSONprodukte)[index].name;
+                    lifeH3.innerHTML = (jsonObj)[index].name;
                     document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeH3);
                     //Produkt_beschreibung hinzufügen
                     let lifeP: HTMLParagraphElement = document.createElement("p");
-                    lifeP.innerHTML = JSON.parse(myJSONprodukte)[index].beschreibung;
+                    lifeP.innerHTML = (jsonObj)[index].beschreibung;
                     document.getElementById("lifestyle-produkt" + index)?.appendChild(lifeP);
                     // Preis hinzufügen
                     let lifePreis: HTMLHeadingElement = document.createElement("h4");
-                    lifePreis.innerHTML = JSON.parse(myJSONprodukte)[index].preis.toFixed(2) + "€";
+                    lifePreis.innerHTML = (jsonObj)[index].preis.toFixed(2) + "€";
                     document.getElementById("lifestyle-produkt" + index)?.appendChild(lifePreis);
                     break;
                 //Hygiene-Kategorie
                 case "hygiene":
-                    let hygDiv: HTMLDivElement = document.createElement("div");
-                    hygDiv.setAttribute("class", "hygiene-div");
-                    hygDiv.setAttribute("id", "hygiene-produkt" + index);
-                    document.getElementById("hygiene")?.appendChild(hygDiv);
+                    newDiv.setAttribute("class", "hygiene-div");
+                    newDiv.setAttribute("id", "hygiene-produkt" + index);
+                    document.getElementById("hygiene")?.appendChild(newDiv);
                     // Produktbild hinzufügen
                     let hygImg: HTMLElement = document.createElement("img");
-                    hygImg.setAttribute("src", JSON.parse(myJSONprodukte)[index].img);
+                    hygImg.setAttribute("src", (jsonObj)[index].img);
                     hygImg.setAttribute("alt", "Hygiene-Produkt");
                     hygImg.setAttribute("class", "produktbild");
                     document.getElementById("hygiene-produkt" + index)?.appendChild(hygImg);
                     // Produktbezeichnung hinzufügen
                     let hygH3: HTMLHeadingElement = document.createElement("h3");
-                    hygH3.innerHTML = JSON.parse(myJSONprodukte)[index].name;
+                    hygH3.innerHTML = (jsonObj)[index].name;
                     document.getElementById("hygiene-produkt" + index)?.appendChild(hygH3);
                     // Produktbeschreibung hinzufügen
                     let hygP: HTMLParagraphElement = document.createElement("p");
-                    hygP.innerHTML = JSON.parse(myJSONprodukte)[index].beschreibung;
+                    hygP.innerHTML = (jsonObj)[index].beschreibung;
                     document.getElementById("hygiene-produkt" + index)?.appendChild(hygP);
                     let hygPreis: HTMLHeadingElement = document.createElement("h4");
-                    hygPreis.innerHTML = JSON.parse(myJSONprodukte)[index].preis.toFixed(2) + "€";
+                    hygPreis.innerHTML = (jsonObj)[index].preis.toFixed(2) + "€";
                     document.getElementById("hygiene-produkt" + index)?.appendChild(hygPreis);
                     break;
                 default:
@@ -76,13 +75,18 @@ namespace Produkte {
             let newButton: HTMLButtonElement = document.createElement("button");
             newButton.innerHTML = "Jetzt kaufen";
             //hygDiv.appendChild(newButton).innerHTML = "in den Warenkorb";
-            newButton.addEventListener("click", handleWarenkorbClick.bind(JSON.parse(myJSONprodukte)[index]));
+            newButton.addEventListener("click", handleWarenkorbClick.bind(jsonObj[index]));
             document.getElementById("lifestyle-produkt" + index)?.appendChild(newButton);
             document.getElementById("hygiene-produkt" + index)?.appendChild(newButton);
+            newButton.setAttribute("name", jsonObj[index].name);
         }
     }
+    function putInCart(_produkt: Produkt): void {
+        localStorage.setItem(_produkt.name, JSON.stringify(_produkt);
+        console.log(localStorage);
+    }
     //Funktion des "Kaufen"-Buttons
-    function handleWarenkorbClick(this: Produkte.Produkt, _click: MouseEvent): void {
+    function handleWarenkorbClick(this: Produkt, _click: MouseEvent): void {
         //Berechnung des Gesamt-Preises
         preisCounter += this.preis;
         console.log("Total: " + preisCounter.toFixed(2) + "€");
@@ -90,6 +94,12 @@ namespace Produkte {
         //Berechnung der Artikelanzahl im Warenkorb
         warenAnzahl++;
         warenNr.innerHTML = (warenAnzahl).toString();
+
+        putInCart(this);
+        //lege Item in Einkaufswagen
+
+        //   localStorage.setItem("name", (<HTMLElement>_click.target)?.getAttribute("name")!);
+        //   localStorage.getItem("name").appendChild();
 
     }
     //Ein-/Ausblenden der Produktkategorien
