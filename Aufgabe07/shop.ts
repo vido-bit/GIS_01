@@ -2,6 +2,7 @@ namespace Produkte {
 
     window.addEventListener("load", init);
 
+    // let cartProdukte: Produkt[] = [];
     let warenAnzahl: number = 0;
     let preisCounter: number = 0;
     let warenNr: HTMLHeadingElement;
@@ -81,9 +82,11 @@ namespace Produkte {
             newButton.setAttribute("name", jsonObj[index].name);
         }
     }
-    function putInCart(_produkt: Produkt): void {
-        localStorage.setItem(_produkt.name, JSON.stringify(_produkt);
+    async function putInCart(_produkt: Produkt): Promise<void> {
+        localStorage.setItem(_produkt.name, JSON.stringify(_produkt));
+        // cartProdukte = JSON.parse(localStorage.getItem(_produkt));
         console.log(localStorage);
+        // cartProdukte = JSON.parse(localStorage.getItem(_produkt.name, _produk));
     }
     //Funktion des "Kaufen"-Buttons
     function handleWarenkorbClick(this: Produkt, _click: MouseEvent): void {
