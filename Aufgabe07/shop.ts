@@ -81,6 +81,7 @@ namespace Produkte {
             newButton.setAttribute("name", jsonObj[index].name);
         }
     }
+    //Artikel auszuwählen, die in den Einkaufswagen gelegt werden sollen
     function putInCart(_produkt: Produkt): void {
         localStorage.setItem(_produkt.name, JSON.stringify(_produkt);
         console.log(localStorage);
@@ -95,12 +96,11 @@ namespace Produkte {
         warenAnzahl++;
         warenNr.innerHTML = (warenAnzahl).toString();
 
-        putInCart(this);
         //lege Item in Einkaufswagen
+        putInCart(this);
 
         //   localStorage.setItem("name", (<HTMLElement>_click.target)?.getAttribute("name")!);
         //   localStorage.getItem("name").appendChild();
-
     }
     //Ein-/Ausblenden der Produktkategorien
     function handleCategoryClick(this: HTMLDivElement, _click: MouseEvent): void {
