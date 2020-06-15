@@ -2,6 +2,7 @@
 var Produkte;
 (function (Produkte) {
     window.addEventListener("load", init);
+    // let cartProdukte: Produkt[] = [];
     let warenAnzahl = 0;
     let preisCounter = 0;
     let warenNr;
@@ -77,9 +78,11 @@ var Produkte;
             newButton.setAttribute("name", Produkte.jsonObj[index].name);
         }
     }
-    function putInCart(_produkt) {
+    async function putInCart(_produkt) {
         localStorage.setItem(_produkt.name, JSON.stringify(_produkt));
+        // cartProdukte = JSON.parse(localStorage.getItem(_produkt));
         console.log(localStorage);
+        // cartProdukte = JSON.parse(localStorage.getItem(_produkt.name, _produk));
     }
     //Funktion des "Kaufen"-Buttons
     function handleWarenkorbClick(_click) {

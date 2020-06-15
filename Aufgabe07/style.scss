@@ -84,6 +84,7 @@ h1 {
   filter: drop-shadow(0px 0px -5px #222);
   z-index: 14;
   position: relative;
+  top: 80px;
   @include iPadPro {
     margin: -210px auto auto 50%;
   }
@@ -141,7 +142,7 @@ p {
   filter: drop-shadow(2px -1px 2px rgb(22, 22, 22));
   rotate: -15deg;
   margin-left: 448px;
-  margin-top: -22px;
+  margin-top: 60px;
   animation-name: sticker;
   animation-duration: 1.5s;
   float: none;
