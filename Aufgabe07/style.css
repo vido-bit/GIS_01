@@ -476,6 +476,7 @@ h5 {
 }
 
 #clear-cart-button {
+  border-color: black;
   background-color: white;
   border-style: inset;
 }
