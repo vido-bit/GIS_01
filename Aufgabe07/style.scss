@@ -360,6 +360,19 @@ h5 {
   }
 }
 #warenkorb_total{
+  width: 100%;
+  margin: auto;
   position: relative;
   top: -690px;
+  text-align: center;
+  color: white;
+  background-color: #960000;
+  padding: 25px;
+  border-color: black;
+  border-style: inset;
+  border-width: 4px;
+}
+#clear-cart-button{
+  background-color: white;
+  border-style: inset;
 }
