@@ -86,8 +86,6 @@ namespace Produkte {
         let cartContent: string = JSON.stringify(_produkt);
         localStorage.setItem(_produkt.name, cartContent);
         console.log(localStorage);
-        // cartProdukte = JSON.parse(localStorage.getItem(_produkt));
-        // cartProdukte = JSON.parse(localStorage.getItem(_produkt.name, _produk));
     }
     //Funktion des "Kaufen"-Buttons
     function handleWarenkorbClick(this: Produkt, _click: Event): void {
@@ -102,18 +100,7 @@ namespace Produkte {
         //lege Item in Einkaufswagen
         putInCart(this);
 
-        //Gesamtpreis anzeigen
-
-
-
-
-
-        //   localStorage.setItem("name", (<HTMLElement>_click.target)?.getAttribute("name")!);
-        //   localStorage.getItem("name").appendChild();
     }
-
-
-
 
     //Ein-/Ausblenden der Produktkategorien
     function handleCategoryClick(this: HTMLDivElement, _click: Event): void {
