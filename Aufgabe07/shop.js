@@ -2,7 +2,7 @@
 var Produkte;
 (function (Produkte) {
     window.addEventListener("load", init);
-    // let cartProdukte: Produkt[] = [];
+    Produkte.jsonObj = [];
     let warenAnzahl = 0;
     let preisCounter = 0;
     let warenNr;
@@ -71,17 +71,18 @@ var Produkte;
             //Button hinzufügen
             let newButton = document.createElement("button");
             newButton.innerHTML = "Jetzt kaufen";
-            //hygDiv.appendChild(newButton).innerHTML = "in den Warenkorb";
             newButton.addEventListener("click", handleWarenkorbClick.bind(Produkte.jsonObj[index]));
             document.getElementById("lifestyle-produkt" + index)?.appendChild(newButton);
             document.getElementById("hygiene-produkt" + index)?.appendChild(newButton);
             newButton.setAttribute("name", Produkte.jsonObj[index].name);
         }
     }
+    //Produkt in Warekorb legen
     async function putInCart(_produkt) {
-        localStorage.setItem(_produkt.name, JSON.stringify(_produkt));
-        // cartProdukte = JSON.parse(localStorage.getItem(_produkt));
+        let cartContent = JSON.stringify(_produkt);
+        localStorage.setItem(_produkt.name, cartContent);
         console.log(localStorage);
+        // cartProdukte = JSON.parse(localStorage.getItem(_produkt));
         // cartProdukte = JSON.parse(localStorage.getItem(_produkt.name, _produk));
     }
     //Funktion des "Kaufen"-Buttons
@@ -92,8 +93,9 @@ var Produkte;
         //Berechnung der Artikelanzahl im Warenkorb
         warenAnzahl++;
         warenNr.innerHTML = (warenAnzahl).toString();
-        putInCart(this);
         //lege Item in Einkaufswagen
+        putInCart(this);
+        //Gesamtpreis anzeigen
         //   localStorage.setItem("name", (<HTMLElement>_click.target)?.getAttribute("name")!);
         //   localStorage.getItem("name").appendChild();
     }
@@ -120,6 +122,5 @@ var Produkte;
         document.getElementById("lifestyle-button").style.background = "#960000";
         document.getElementById("hygiene-button").style.background = "black";
     }
-    //document.querySelector("button").addEventListener("click", inWarenkorb);
 })(Produkte || (Produkte = {}));
 //# sourceMappingURL=shop.js.map

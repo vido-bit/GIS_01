@@ -2,7 +2,7 @@ namespace Produkte {
 
     window.addEventListener("load", init);
 
-    // let cartProdukte: Produkt[] = [];
+    export let jsonObj: Produkt[] = [];
     let warenAnzahl: number = 0;
     let preisCounter: number = 0;
     let warenNr: HTMLHeadingElement;
@@ -75,21 +75,22 @@ namespace Produkte {
             //Button hinzufügen
             let newButton: HTMLButtonElement = document.createElement("button");
             newButton.innerHTML = "Jetzt kaufen";
-            //hygDiv.appendChild(newButton).innerHTML = "in den Warenkorb";
             newButton.addEventListener("click", handleWarenkorbClick.bind(jsonObj[index]));
             document.getElementById("lifestyle-produkt" + index)?.appendChild(newButton);
             document.getElementById("hygiene-produkt" + index)?.appendChild(newButton);
             newButton.setAttribute("name", jsonObj[index].name);
         }
     }
+    //Produkt in Warekorb legen
     async function putInCart(_produkt: Produkt): Promise<void> {
-        localStorage.setItem(_produkt.name, JSON.stringify(_produkt));
-        // cartProdukte = JSON.parse(localStorage.getItem(_produkt));
+        let cartContent: string = JSON.stringify(_produkt);
+        localStorage.setItem(_produkt.name, cartContent);
         console.log(localStorage);
+        // cartProdukte = JSON.parse(localStorage.getItem(_produkt));
         // cartProdukte = JSON.parse(localStorage.getItem(_produkt.name, _produk));
     }
     //Funktion des "Kaufen"-Buttons
-    function handleWarenkorbClick(this: Produkt, _click: MouseEvent): void {
+    function handleWarenkorbClick(this: Produkt, _click: Event): void {
         //Berechnung des Gesamt-Preises
         preisCounter += this.preis;
         console.log("Total: " + preisCounter.toFixed(2) + "€");
@@ -101,11 +102,21 @@ namespace Produkte {
         //lege Item in Einkaufswagen
         putInCart(this);
 
+        //Gesamtpreis anzeigen
+
+
+
+
+
         //   localStorage.setItem("name", (<HTMLElement>_click.target)?.getAttribute("name")!);
         //   localStorage.getItem("name").appendChild();
     }
+
+
+
+
     //Ein-/Ausblenden der Produktkategorien
-    function handleCategoryClick(this: HTMLDivElement, _click: MouseEvent): void {
+    function handleCategoryClick(this: HTMLDivElement, _click: Event): void {
         switch (this.getAttribute("class")) {
             case "hygiene-kategorie":
                 showHygiene();
@@ -128,6 +139,4 @@ namespace Produkte {
         (<HTMLElement>document.getElementById("lifestyle-button")).style.background = "#960000";
         (<HTMLElement>document.getElementById("hygiene-button")).style.background = "black";
     }
-
-    //document.querySelector("button").addEventListener("click", inWarenkorb);
 }
