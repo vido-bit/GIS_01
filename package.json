@@ -4,6 +4,7 @@
   "description": "package",
   "main": "index.js",
   "dependencies": {
+    "@types/node": "^14.0.13",
     "tslint": "^6.1.2"
   },
   "devDependencies": {},

@@ -2,22 +2,25 @@
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width" />
-	<link rel="icon" type="image/png" href="../Aufgabe03/matp_la.png">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="../Aufgabe03/matp_la.png">
+    <script src="server.js" defer></script>
+    <script src="script.js" defer></script>
     <title>Formular</title>
-    <form method="get" action="https://gis-example.herokuapp.com">
-        <input type="submit" value="Submit" name="fname">
-    </form>
+
 </head>
 
 <body>
-	<header>
-
-	</header>
-	<main>
-		<button type="submit">Abschicken</button>
-	</main>
+    <header>
+        <h1>Hello Formular!</h1>
+    </header>
+    <main>
+        <form method="get" action="https:testservergis01.herokuapp.com">
+            <input type="submit" value="Submit" name="fname">
+            <button type="submit" id="klick">Abschicken</button>
+        </form>
+    </main>
 </body>
 
 </html>

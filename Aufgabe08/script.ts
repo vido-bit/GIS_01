@@ -1,28 +1,18 @@
-import * as Http from "http";
+namespace A08Server {
+    window.addEventListener("load", init);
 
-export namespace A08Server {
-    console.log("Starting server");
-    let port: number = Number(process.env.PORT);
-    if (!port)
-        port = 8100;
+    async function init(_event: Event): Promise<void> {
 
-    let server: Http.Server = Http.createServer();
-    server.addListener("request", handleRequest);
-    server.addListener("listening", handleListen);
-    server.listen(port);
+        let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#klick");
+        button.addEventListener("klick", communicate.bind(button));
 
-    function handleListen(): void {
-        console.log("Listening");
+        //  await communicate("https://testservergis01.herokuapp.com/");
+
     }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-        console.log("I hear voices!");
-
-        _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
-
-        _response.write(_request.url);
-
-        _response.end();
+    async function communicate(_event: Event): Promise<void> {
+        let response: Response = await fetch("https://testservergis01.herokuapp.com/");
+        let test = await response.formData();
+        console.log(test);
     }
 }
