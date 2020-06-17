@@ -1,0 +1,23 @@
+{
+  "name": "testservergis01",
+  "version": "1.0.0",
+  "description": "package",
+  "main": "index.js",
+  "dependencies": {
+    "tslint": "^6.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe08/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vido-bit/GIS_01.git"
+  },
+  "author": "vido-bit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vido-bit/GIS_01/issues"
+  },
+  "homepage": "https://github.com/vido-bit/GIS_01#readme"
+}
