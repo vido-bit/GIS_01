@@ -12,8 +12,7 @@ namespace A08Server {
 
     async function communicate(_klick: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        // tslint:disable-next-line: no-any
-        let url: string =  "https://testservergis01.herokuapp.com";
+        let url: string = "https://testservergis01.herokuapp.com";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();

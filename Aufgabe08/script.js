@@ -8,7 +8,6 @@ var A08Server;
     }
     async function communicate(_klick) {
         let formData = new FormData(document.forms[0]);
-        // tslint:disable-next-line: no-any
         let url = "https://testservergis01.herokuapp.com";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
