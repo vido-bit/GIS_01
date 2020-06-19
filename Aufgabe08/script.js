@@ -1,9 +1,9 @@
 "use strict";
 var A08Server;
 (function (A08Server) {
-    global.window.addEventListener("load", init);
+    window.addEventListener("load", init);
+    let button = document.querySelector("#klick");
     async function init(_event) {
-        let button = document.querySelector("#klick");
         button.addEventListener("klick", communicate.bind(button));
     }
     async function communicate(_klick) {
@@ -13,8 +13,9 @@ var A08Server;
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
         let response = await fetch(url);
-        let test = await response.formData();
-        console.log(test);
+        let responseOutput = await response.url;
+        responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/", "");
+        console.log(response);
     }
 })(A08Server || (A08Server = {}));
 //# sourceMappingURL=script.js.map

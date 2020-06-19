@@ -1,8 +1,9 @@
 namespace A08Server {
-    global.window.addEventListener("load", init);
+    window.addEventListener("load", init);
+    let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#klick");
+
     async function init(_event: Event): Promise<void> {
 
-        let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#klick");
         button.addEventListener("klick", communicate.bind(button));
 
     }
@@ -13,10 +14,10 @@ namespace A08Server {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
-
         let response: Response = await fetch(url);
-        let test: FormData = await response.formData();
-        console.log(test);
+        let responseOutput: string = await response.url;
+        responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/","");
+        console.log(response);
     }
 
 }
