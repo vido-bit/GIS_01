@@ -63,7 +63,7 @@ var Produkte;
         versandPreis.innerHTML = ("Versandkosten: " + versandkosten + "€");
         shoppingSummary.appendChild(versandPreis);
         let totalPreis = document.createElement("h4");
-        totalPreis.innerHTML = ("Total: " + finalPreis + "€");
+        totalPreis.innerHTML = ("Total: " + finalPreis.toFixed(2) + "€");
         shoppingSummary.appendChild(totalPreis);
         //Button, um alle Artikel aus dem Warenkorb zu entfernen
         let clearCart = document.createElement("button");
