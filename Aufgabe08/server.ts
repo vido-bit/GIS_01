@@ -13,16 +13,20 @@ export namespace A08Server {
     let server: Http.Server = Http.createServer();
     //Anfragen bearbeiten
     server.addListener("request", handleRequest);
+    //Anfragen abfangen
     server.addListener("listening", handleListen);
+    //Auf Anfragen von port warten
     server.listen(port);
 
+    //Ausführung bei Serverstart
     function handleListen(): void {
         console.log("Listening");
     }
 
+    //Ausführung bei Anfrage
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-        console.log("I hear voices!");
-
+        console.log(_request.url);
+        //Header -> Inhaltstyp HTML mit Zeichensatz UTF-8, Zugriff von überall
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
