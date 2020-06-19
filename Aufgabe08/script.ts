@@ -1,5 +1,5 @@
 namespace A08Server {
-    window.addEventListener("load", init);
+    global.window.addEventListener("load", init);
     async function init(_event: Event): Promise<void> {
 
         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#klick");

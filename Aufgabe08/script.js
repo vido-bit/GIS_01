@@ -1,7 +1,7 @@
 "use strict";
 var A08Server;
 (function (A08Server) {
-    window.addEventListener("load", init);
+    global.window.addEventListener("load", init);
     async function init(_event) {
         let button = document.querySelector("#klick");
         button.addEventListener("klick", communicate.bind(button));
