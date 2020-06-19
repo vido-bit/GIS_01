@@ -3,24 +3,24 @@ namespace A08Server {
 
 
 
-    function init(_event: Event):  void{
+    async function init(_event: Event): Promise<void> {
 
         let button: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#klick");
-        button.addEventListener("klick", handleButton);
+        button.addEventListener("klick", communicate.bind(button));
 
     }
 
-    async function communicate(_url: string): Promise<void> {
+    async function communicate(_klick: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
         // tslint:disable-next-line: no-any
+        let url: string =  "https://testservergis01.herokuapp.com";
+        // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        _url += "?" + query.toString();
+        url += "?" + query.toString();
 
-        let response: Response = await fetch(_url);
+        let response: Response = await fetch(url);
         let test: FormData = await response.formData();
         console.log(test);
     }
-    async function handleButton(): Promise<void> {
-        await communicate("https://testservergis01.herokuapp.com/");
-    }
+
 }
