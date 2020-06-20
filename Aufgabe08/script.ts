@@ -16,8 +16,8 @@ namespace A08Server {
         url += "?" + query.toString();
         let response: Response = await fetch(url);
         let responseOutput: string = await response.url;
-        responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/","");
-        console.log(response);
+        responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/", "");
+        console.log(responseOutput);
     }
 
 }

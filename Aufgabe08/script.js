@@ -15,7 +15,7 @@ var A08Server;
         let response = await fetch(url);
         let responseOutput = await response.url;
         responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/", "");
-        console.log(response);
+        console.log(responseOutput);
     }
 })(A08Server || (A08Server = {}));
 //# sourceMappingURL=script.js.map
