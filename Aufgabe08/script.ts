@@ -4,18 +4,18 @@ namespace A08Server {
 
     async function init(_event: Event): Promise<void> {
 
-        button.addEventListener("klick", communicate.bind(button));
+        button.addEventListener("click", communicate.bind(button));
 
     }
 
-    async function communicate(_klick: Event): Promise<void> {
+    async function communicate(_click: Event): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://testservergis01.herokuapp.com";
+        let url: string = "https://testservergis01.herokuapp.com/";
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
         let response: Response = await fetch(url);
-        let responseOutput: string = await response.url;
+        let responseOutput: String = await response.url;
         responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/", "");
         console.log(responseOutput);
     }

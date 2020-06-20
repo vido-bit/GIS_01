@@ -4,11 +4,11 @@ var A08Server;
     window.addEventListener("load", init);
     let button = document.querySelector("#klick");
     async function init(_event) {
-        button.addEventListener("klick", communicate.bind(button));
+        button.addEventListener("click", communicate.bind(button));
     }
-    async function communicate(_klick) {
+    async function communicate(_click) {
         let formData = new FormData(document.forms[0]);
-        let url = "https://testservergis01.herokuapp.com";
+        let url = "https://testservergis01.herokuapp.com/";
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
