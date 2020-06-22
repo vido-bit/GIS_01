@@ -7,6 +7,12 @@
     <link rel="icon" type="image/png" href="../Aufgabe03/matp_la.png">
     <script src="script.js" defer></script>
     <title>Formular</title>
+    <style>
+        button{
+            width: 100px;
+            height: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,8 +21,14 @@
     </header>
     <main>
         <form method="get" action="https://testservergis01.herokuapp.com">
-            <input type="submit" value="Submit" name="fname">
-            <button type="submit" id="klick">Abschicken</button>
+            <label for="fname">First name:</label><br>
+<input type="text" id="fname" name="fname" placeholder="Vorname"><br>
+<label for="lname">Last Name:</label><br>
+<input type="text" id="lname" name="lname" placeholder="Nachname"><br>
+<label for="nachricht">Nachricht:</label><br>
+            <input type="text" id="nachricht" name="nachricht">
+            <br>
+            <button type="submit" value="Submit" placeholder="Absenden" name="button">
         </form>
     </main>
 </body>

@@ -2,7 +2,7 @@
 var A08Server;
 (function (A08Server) {
     window.addEventListener("load", init);
-    let button = document.querySelector("#klick");
+    let button = document.querySelector("button");
     async function init(_event) {
         button.addEventListener("click", communicate.bind(button));
     }
@@ -13,9 +13,9 @@ var A08Server;
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
         let response = await fetch(url);
-        let responseOutput = await response.url;
-        responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/", "");
-        console.log(responseOutput);
+        //let responseOutput: String = await response.url;
+        //    responseOutput = responseOutput.replace("https://testservergis01.herokuapp.com/", "");
+        //  console.log(responseOutput);
     }
 })(A08Server || (A08Server = {}));
 //# sourceMappingURL=script.js.map
