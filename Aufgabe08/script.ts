@@ -18,7 +18,7 @@ namespace A08Server {
         let response: Response = await fetch(url);
         let responseOutput: String = await response.url;
         responseOutput = responseOutput.replace("https://vido-bit.herokuapp.com/", "");
-        console.log(responseOutput)
+        console.log(responseOutput);
     }
 
 }
