@@ -12,6 +12,7 @@ var A08Server;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
+        console.log(url);
         let response = await fetch(url);
         let responseOutput = await response.url;
         responseOutput = responseOutput.replace("https://vido-bit.herokuapp.com/", "");

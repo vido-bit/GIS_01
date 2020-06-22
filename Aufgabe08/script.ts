@@ -14,10 +14,11 @@ namespace A08Server {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
+        console.log(url);
         let response: Response = await fetch(url);
         let responseOutput: String = await response.url;
         responseOutput = responseOutput.replace("https://vido-bit.herokuapp.com/", "");
-        console.log(responseOutput);
+        console.log(responseOutput)
     }
 
 }
