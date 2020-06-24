@@ -13,8 +13,7 @@ export namespace A09Server {
     //Server erstellen
     let server: Http.Server = Http.createServer();
     //Anfragen bearbeiten
-    server.addListener("request", handleRequestHtml);
-    server.addListener("request", handleRequestJson);
+    server.addListener("request", handleRequest);
     //Anfragen abfangen
     server.addListener("listening", handleListen);
     //Auf Anfragen von port warten
@@ -33,7 +32,7 @@ export namespace A09Server {
     }
 
     //Ausführung bei Anfrage
-    function handleRequestHtml(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
         console.log(_request.url);
         //Header -> Inhaltstyp HTML mit Zeichensatz UTF-8, Zugriff von überall
         _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -41,23 +40,20 @@ export namespace A09Server {
 
         if (_request.url) {
             let q: url.UrlWithParsedQuery = url.parse(_request.url, true);
-            for (let key in q.query) {
-                _response.write(key + ":" + q.query[key] + "<br>");
+            let path: string | null = q.pathname;
+            if (path == "//html") {
+                console.log("HTML is true");
+                for (let key in q.query) {
+                    _response.write(key + ":" + q.query[key] + "<br>");
+                }
             }
-            let jsonString: string = JSON.stringify(q.query);
-            _response.write(jsonString);
+            else if (path == "//json") {
+                console.log("JSON is true");
+                let jsonString: string = JSON.stringify(q.query);
+                _response.write(jsonString);
+            }
         }
 
         _response.end();
     }
-}
-function handleRequestJson(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-    console.log(_request.url);
-    //Header -> Inhaltstyp HTML mit Zeichensatz UTF-8, Zugriff von überall
-    _response.setHeader("content-type", "application/json; charset=utf-8");
-    _response.setHeader("Access-Control-Allow-Origin", "*");
-
-    _response.write("This is JSON response");
-
-    _response.end();
 }

@@ -1,28 +1,37 @@
 namespace A09Server {
     window.addEventListener("load", init);
     // let form: HTMLFormElement;
+    let responseText: HTMLDivElement;
     let adresse: string = "https://vido-bit.herokuapp.com/";
-    let formData: FormData = new FormData(document.forms[0]);
-    // tslint:disable-next-line: no-any
-    let query: URLSearchParams = new URLSearchParams(<any>formData);
-    let htmlButton: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#htmlbutton");
-    let jsonButton: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#jsonbutton");
+    let formData: FormData;
+    let query: URLSearchParams;
+    let htmlButton: HTMLButtonElement;
+    let jsonButton: HTMLButtonElement;
 
     async function init(_event: Event): Promise<void> {
+        generateDisplay();
+        htmlButton = <HTMLButtonElement>document.querySelector("#htmlbutton");
+        jsonButton = <HTMLButtonElement>document.querySelector("#jsonbutton");
         htmlButton.addEventListener("click", getHtml);
         jsonButton.addEventListener("click", getJson);
+        formData = new FormData(document.forms[0]);
+        // tslint:disable-next-line: no-any
+        query = new URLSearchParams(<any>formData);
+    }
+
+    function generateDisplay(): void {
+        responseText = <HTMLDivElement>document.querySelector("#response");
     }
 
     async function getHtml(): Promise<void> {
-        adresse += "/html";
+        //      adresse += "/html";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
         let responseOutput: string = await response.text();
-        let responseText: HTMLDivElement = <HTMLDivElement>document.querySelector("#response");
         responseText.innerHTML = responseOutput;
     }
     async function getJson(): Promise<void> {
-        adresse += "/json";
+        //      adresse += "/json";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
         let responseOutput: string = await response.text();

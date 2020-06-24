@@ -3,26 +3,34 @@ var A09Server;
 (function (A09Server) {
     window.addEventListener("load", init);
     // let form: HTMLFormElement;
+    let responseText;
     let adresse = "https://vido-bit.herokuapp.com/";
-    let formData = new FormData(document.forms[0]);
-    // tslint:disable-next-line: no-any
-    let query = new URLSearchParams(formData);
-    let htmlButton = document.querySelector("#htmlbutton");
-    let jsonButton = document.querySelector("#jsonbutton");
+    let formData;
+    let query;
+    let htmlButton;
+    let jsonButton;
     async function init(_event) {
+        generateDisplay();
+        htmlButton = document.querySelector("#htmlbutton");
+        jsonButton = document.querySelector("#jsonbutton");
         htmlButton.addEventListener("click", getHtml);
         jsonButton.addEventListener("click", getJson);
+        formData = new FormData(document.forms[0]);
+        // tslint:disable-next-line: no-any
+        query = new URLSearchParams(formData);
+    }
+    function generateDisplay() {
+        responseText = document.querySelector("#response");
     }
     async function getHtml() {
-        adresse += "/html";
+        //      adresse += "/html";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
         let responseOutput = await response.text();
-        let responseText = document.querySelector("#response");
         responseText.innerHTML = responseOutput;
     }
     async function getJson() {
-        adresse += "/json";
+        //      adresse += "/json";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
         let responseOutput = await response.text();
