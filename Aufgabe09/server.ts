@@ -40,18 +40,33 @@ export namespace A09Server {
 
         if (_request.url) {
             let q: url.UrlWithParsedQuery = url.parse(_request.url, true);
-            let path: string | null = q.pathname;
-            if (path == "//html") {
+            let path: string = <string>q.pathname;
+            if (path == "/json") {
+                console.log("JSON is true");
+                let jsonString: string = JSON.stringify(q.query);
+                _response.write(jsonString);
+            }
+            if (path == "/html") {
                 console.log("HTML is true");
                 for (let key in q.query) {
                     _response.write(key + ":" + q.query[key] + "<br>");
                 }
             }
-            else if (path == "//json") {
-                console.log("JSON is true");
-                let jsonString: string = JSON.stringify(q.query);
-                _response.write(jsonString);
-            }
+            // let jsonObj: JSON = JSON.parse(jsonString);
+            //  console.log(jsonObj);
+
+            /*    if (path == "//html") {
+                    console.log("HTML is true");
+                    for (let key in q.query) {
+                        _response.write(key + ":" + q.query[key] + "<br>");
+                    }
+                }
+                else if (path == "//json") {
+                    console.log("JSON is true");
+                    let jsonString: string = JSON.stringify(q.query);
+                    _response.write(jsonString);
+                }
+                */
         }
 
         _response.end();

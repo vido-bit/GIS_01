@@ -4,7 +4,6 @@ var A09Server;
     window.addEventListener("load", init);
     // let form: HTMLFormElement;
     let responseText;
-    let adresse = "https://vido-bit.herokuapp.com/";
     let formData;
     let query;
     let htmlButton;
@@ -23,14 +22,16 @@ var A09Server;
         responseText = document.querySelector("#response");
     }
     async function getHtml() {
-        //      adresse += "/html";
+        let adresse = "http://localhost:8100";
+        adresse += "/html";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
         let responseOutput = await response.text();
         responseText.innerHTML = responseOutput;
     }
     async function getJson() {
-        //      adresse += "/json";
+        let adresse = "https://vido-bit.herokuapp.com/";
+        adresse += "/json";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
         let responseOutput = await response.text();

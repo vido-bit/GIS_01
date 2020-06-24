@@ -2,7 +2,6 @@ namespace A09Server {
     window.addEventListener("load", init);
     // let form: HTMLFormElement;
     let responseText: HTMLDivElement;
-    let adresse: string = "https://vido-bit.herokuapp.com/";
     let formData: FormData;
     let query: URLSearchParams;
     let htmlButton: HTMLButtonElement;
@@ -24,18 +23,20 @@ namespace A09Server {
     }
 
     async function getHtml(): Promise<void> {
-        //      adresse += "/html";
+        let adresse: string = "http://localhost:8100";
+        adresse += "/html";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
         let responseOutput: string = await response.text();
         responseText.innerHTML = responseOutput;
     }
     async function getJson(): Promise<void> {
-        //      adresse += "/json";
+        let adresse: string = "https://vido-bit.herokuapp.com/";
+        adresse += "/json";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
         let responseOutput: string = await response.text();
-        let jsonResponse: string = JSON.parse(responseOutput);
+        let jsonResponse: JSON = JSON.parse(responseOutput);
         console.log(jsonResponse);
     }
     /*async function communicate(): Promise<void> {
