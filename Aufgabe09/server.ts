@@ -1,6 +1,7 @@
 //Module auf sämtliche importierte Funktionalitäten anwenden
 import * as Http from "http";
 import * as url from "url";
+import { ParsedUrlQuery } from "querystring";
 
 export namespace A09Server {
     console.log("Starting server");
@@ -18,18 +19,15 @@ export namespace A09Server {
     //Auf Anfragen von port warten
     server.listen(port);
 
-    //let url = require("url");
     let adresse: string = "http://localhost:8080/default.htm?jahr=2017&monat=february";
-    let q = url.parse(adresse, true);
+    let q: url.UrlWithParsedQuery = url.parse(adresse, true);
 
     console.log(q.host);
     console.log(q.pathname);
     console.log(q.search);
 
-    let qdata = q.query;
-    console.log(qdata.monat);
-
-
+    let qdata: ParsedUrlQuery = q.query;
+    console.log(qdata);
 
     //Ausführung bei Serverstart
     function handleListen(): void {
@@ -43,7 +41,7 @@ export namespace A09Server {
         _response.setHeader("content-type", "text/html; charset=utf-8");
         _response.setHeader("Access-Control-Allow-Origin", "*");
 
-        _response.write(_request.url);
+        _response.write("This is my response");
 
         _response.end();
     }
