@@ -11,7 +11,7 @@ var A09Server;
     let port = Number(process.env.PORT);
     //Port-Zuweisung, falls vorher fehlgeschlagen
     if (!port)
-        port = 8100;
+        port = 8080;
     //Server erstellen
     let server = Http.createServer();
     //Anfragen bearbeiten

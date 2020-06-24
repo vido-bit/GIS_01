@@ -9,7 +9,7 @@ export namespace A09Server {
     let port: number = Number(process.env.PORT);
     //Port-Zuweisung, falls vorher fehlgeschlagen
     if (!port)
-        port = 8100;
+        port = 8080;
     //Server erstellen
     let server: Http.Server = Http.createServer();
     //Anfragen bearbeiten
