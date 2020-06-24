@@ -53,20 +53,6 @@ var A09Server;
                     _response.write(key + ":" + q.query[key] + "<br>");
                 }
             }
-            // let jsonObj: JSON = JSON.parse(jsonString);
-            //  console.log(jsonObj);
-            /*    if (path == "//html") {
-                    console.log("HTML is true");
-                    for (let key in q.query) {
-                        _response.write(key + ":" + q.query[key] + "<br>");
-                    }
-                }
-                else if (path == "//json") {
-                    console.log("JSON is true");
-                    let jsonString: string = JSON.stringify(q.query);
-                    _response.write(jsonString);
-                }
-                */
         }
         _response.end();
     }
