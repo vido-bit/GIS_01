@@ -22,7 +22,7 @@ var A09Server;
         responseText = document.querySelector("#response");
     }
     async function getHtml() {
-        let adresse = "https://vido-bit.herokuapp.com/";
+        let adresse = "http://localhost:8100";
         adresse += "/html";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
@@ -30,7 +30,7 @@ var A09Server;
         responseText.innerHTML = responseOutput;
     }
     async function getJson() {
-        let adresse = "https://vido-bit.herokuapp.com/";
+        let adresse = "http://localhost:8100";
         adresse += "/json";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
@@ -38,19 +38,5 @@ var A09Server;
         let jsonResponse = JSON.parse(responseOutput);
         console.log(jsonResponse);
     }
-    /*async function communicate(): Promise<void> {
-       
-        //let adresse: string = "https://vido-bit.herokuapp.com/";
-        // tslint:disable-next-line: no-any
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        adresse += "?" + query.toString();
-        console.log(adresse);
-        // let response: Response = await fetch(adresse);
-        //let responseOutput: string = await response.text();
-        // let jsonResponse = JSON.parse(responseOutput);
-        //  alert(responseOutput);
-        // responseOutput = responseOutput.replace("https://vido-bit.herokuapp.com/", "");
-    }
-*/
 })(A09Server || (A09Server = {}));
 //# sourceMappingURL=script.js.map
