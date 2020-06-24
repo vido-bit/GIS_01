@@ -36,6 +36,7 @@ var A09Server;
         alert(responseOutput);
         // responseOutput = responseOutput.replace("https://vido-bit.herokuapp.com/", "");
         console.log(jsonResponse);
+        document.querySelector("#response").innerHTML = responseOutput;
     }
 })(A09Server || (A09Server = {}));
 //# sourceMappingURL=script.js.map

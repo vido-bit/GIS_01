@@ -32,11 +32,12 @@ namespace A09Server {
         adresse += "?" + query.toString();
         console.log(adresse);
         let response: Response = await fetch(adresse);
-        let responseOutput: String = await response.text();
-        let jsonResponse: JSON = JSON.parse(responseOutput);
+        let responseOutput: string = await response.text();
+        let jsonResponse = JSON.parse(responseOutput);
         alert(responseOutput);
         // responseOutput = responseOutput.replace("https://vido-bit.herokuapp.com/", "");
         console.log(jsonResponse);
+        (<HTMLDivElement>document.querySelector("#response")).innerHTML = responseOutput;
     }
 
 }
