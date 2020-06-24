@@ -21,17 +21,18 @@
     </header>
     <main>
         <form method="get" action="https://vido-bit.herokuapp.com">
-            <label for="fname">First name:</label><br>
+        <label for="fname">First name:</label><br>
 <input type="text" id="fname" name="fname" placeholder="Vorname"><br>
 <label for="lname">Last Name:</label><br>
 <input type="text" id="lname" name="lname" placeholder="Nachname"><br>
 <label for="nachricht">Nachricht:</label><br>
             <input type="text" id="nachricht" name="nachricht">
             <br>
-            <button type="button" value="Submit" placeholder="Absenden" name="button">
+            <button id="htmlbutton" type="button" value="Submit" name="button">HTML</button>
+            <button id="jsonbutton" type="button" value="Submit" name="button">JSON</button>
         </form>
-        <div id=response>
-            
+        <h2>Antwort des Servers (bei HTML-Anfragen):</h2>
+        <div id=#response>
         </div>
     </main>
 </body>
