@@ -46,7 +46,7 @@ export namespace A09Server {
                 let jsonString: string = JSON.stringify(q.query);
                 _response.write(jsonString);
             }
-            if (path == "/html") {
+           else if (path == "/html") {
                 console.log("HTML is true");
                 for (let key in q.query) {
                     _response.write(key + ":" + q.query[key] + "<br>");
