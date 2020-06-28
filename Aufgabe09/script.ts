@@ -23,7 +23,7 @@ namespace A09Server {
     }
 
     async function getHtml(): Promise<void> {
-        let adresse: string = "http://localhost:8100";
+        let adresse: string = "hhttps://vido-bit.herokuapp.com";
         adresse += "/html";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
@@ -31,7 +31,7 @@ namespace A09Server {
         responseText.innerHTML = responseOutput;
     }
     async function getJson(): Promise<void> {
-        let adresse: string = "http://localhost:8100";
+        let adresse: string = "https://vido-bit.herokuapp.com";
         adresse += "/json";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
