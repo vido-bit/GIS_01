@@ -22,7 +22,7 @@ var A09Server;
         responseText = document.querySelector("#response");
     }
     async function getHtml() {
-        let adresse = "hhttps://vido-bit.herokuapp.com";
+        let adresse = "https://vido-bit.herokuapp.com";
         adresse += "/html";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
