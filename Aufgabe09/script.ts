@@ -14,8 +14,7 @@ namespace A09Server {
         htmlButton.addEventListener("click", getHtml);
         jsonButton.addEventListener("click", getJson);
         formData = new FormData(document.forms[0]);
-        // tslint:disable-next-line: no-any
-        query = new URLSearchParams(<any>formData);
+
     }
 
     function generateDisplay(): void {
@@ -24,6 +23,8 @@ namespace A09Server {
 
     async function getHtml(): Promise<void> {
         let adresse: string = "https://vido-bit.herokuapp.com";
+        // tslint:disable-next-line: no-any
+        query = new URLSearchParams(<any>formData);
         adresse += "/html";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
@@ -32,11 +33,14 @@ namespace A09Server {
     }
     async function getJson(): Promise<void> {
         let adresse: string = "https://vido-bit.herokuapp.com";
+        // tslint:disable-next-line: no-any
+        query = new URLSearchParams(<any>formData);
         adresse += "/json";
         adresse += "?" + query.toString();
         let response: Response = await fetch(adresse);
-        let responseOutput: string = await response.text();
-        let jsonResponse: JSON = JSON.parse(responseOutput);
+        //let responseOutput: string = await response.text();
+        //let jsonResponse: JSON = JSON.parse(responseOutput);
+        let jsonResponse: JSON = await response.json();
         console.log(jsonResponse);
     }
 }

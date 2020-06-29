@@ -15,14 +15,14 @@ var A09Server;
         htmlButton.addEventListener("click", getHtml);
         jsonButton.addEventListener("click", getJson);
         formData = new FormData(document.forms[0]);
-        // tslint:disable-next-line: no-any
-        query = new URLSearchParams(formData);
     }
     function generateDisplay() {
         responseText = document.querySelector("#response");
     }
     async function getHtml() {
         let adresse = "https://vido-bit.herokuapp.com";
+        // tslint:disable-next-line: no-any
+        query = new URLSearchParams(formData);
         adresse += "/html";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
@@ -31,11 +31,14 @@ var A09Server;
     }
     async function getJson() {
         let adresse = "https://vido-bit.herokuapp.com";
+        // tslint:disable-next-line: no-any
+        query = new URLSearchParams(formData);
         adresse += "/json";
         adresse += "?" + query.toString();
         let response = await fetch(adresse);
-        let responseOutput = await response.text();
-        let jsonResponse = JSON.parse(responseOutput);
+        //let responseOutput: string = await response.text();
+        //let jsonResponse: JSON = JSON.parse(responseOutput);
+        let jsonResponse = await response.json();
         console.log(jsonResponse);
     }
 })(A09Server || (A09Server = {}));
