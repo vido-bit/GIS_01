@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="../Aufgabe03/matp_la.png">
+    <script src="script.js" defer></script>
+    <title>Formular</title>
+    <style>
+        button{
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Ich bin nur ein einfaches Formular. 
+            Jetzt füll mich aus und dann geh weiter es gibt hier nichts zu sehen!</h1>
+    </header>
+    <main>
+        <form method="get" action="https://vido-bit.herokuapp.com/">
+<label for="fname">First name:</label><br>
+<input type="text" id="fname" name="Vorname" placeholder="Vorname"><br>
+<label for="lname">Last Name:</label><br>
+<input type="text" id="lname" name="Nachname" placeholder="Nachname"><br>
+<label for="nachricht">Nachricht:</label><br>
+<input type="text" id="nachricht" name="Nachricht">
+            <br>
+            <button id="htmlbutton" type="button" value="Submit" name="button">HTML</button>
+            <button id="jsonbutton" type="button" value="Submit" name="button">JSON</button>
+            <button type="submit">Submit</button>
+        </form>
+        <h2>Antwort des Servers (bei HTML-Anfragen):</h2>
+        <div id="response">
+        </div>
+    </main>
+</body>
+
+</html>
