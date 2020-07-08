@@ -44,6 +44,7 @@ export namespace A11Server {
     }
     //Ausführung bei Serverstart
     function handleListen(): void {
+        
         console.log("Listening");
     }
 
