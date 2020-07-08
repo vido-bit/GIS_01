@@ -1,46 +1,44 @@
-namespace A09Server {
+/*
+import { ParsedUrlQuery } from "querystring";
+import { MongoClientOptions, MongoClient } from "mongodb";
+*/
+namespace A11Server {
     window.addEventListener("load", init);
     // let form: HTMLFormElement;
     let responseText: HTMLDivElement;
-    let formData: FormData;
-    let query: URLSearchParams;
-    let htmlButton: HTMLButtonElement;
-    let jsonButton: HTMLButtonElement;
+    let getButton: HTMLButtonElement;
+    let sendButton: HTMLButtonElement;
+    let formData: FormData = new FormData(document.forms[0]);
+
 
     async function init(_event: Event): Promise<void> {
         generateDisplay();
-        htmlButton = <HTMLButtonElement>document.querySelector("#htmlbutton");
-        jsonButton = <HTMLButtonElement>document.querySelector("#jsonbutton");
-        htmlButton.addEventListener("click", getHtml);
-        jsonButton.addEventListener("click", getJson);
-        formData = new FormData(document.forms[0]);
-
+        getButton = <HTMLButtonElement>document.querySelector("#getbutton");
+        sendButton = <HTMLButtonElement>document.querySelector("#sendbutton");
+        getButton.addEventListener("click", getData);
+        sendButton.addEventListener("click", sendData);
     }
 
     function generateDisplay(): void {
         responseText = <HTMLDivElement>document.querySelector("#response");
     }
 
-    async function getHtml(): Promise<void> {
-        let adresse: string = "https://vido-bit.herokuapp.com";
+    async function getData(): Promise<void> {
+        let adresse: string = "https://vido-bit.herokuapp.com/get";
         // tslint:disable-next-line: no-any
-        query = new URLSearchParams(<any>formData);
-        adresse += "/html";
-        adresse += "?" + query.toString();
+        // query = new URLSearchParams(<any>formData);
         let response: Response = await fetch(adresse);
         let responseOutput: string = await response.text();
         responseText.innerHTML = responseOutput;
     }
-    async function getJson(): Promise<void> {
-        let adresse: string = "https://vido-bit.herokuapp.com";
+    async function sendData(): Promise<void> {
+        formData = new FormData(document.forms[0]);
+        let adresse: string = "https://vido-bit.herokuapp.com/send";
         // tslint:disable-next-line: no-any
-        query = new URLSearchParams(<any>formData);
-        adresse += "/json";
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
         adresse += "?" + query.toString();
-        let response: Response = await fetch(adresse);
-        //let responseOutput: string = await response.text();
-        //let jsonResponse: JSON = JSON.parse(responseOutput);
-        let jsonResponse: JSON = await response.json();
-        console.log(jsonResponse);
+        await fetch(adresse);
     }
+
+
 }
