@@ -1,0 +1,17 @@
+[
+    {
+        "img": "bilder/frozen-yogurt.png",
+        "name": "Naturjoghurt",
+        "preis": 2.00
+    },
+    {
+        "img": "bilder/frozen-strawgurt.png",
+        "name": "Erdbeerjoghurt",
+        "preis": 2.00
+    },
+    {
+        "img": "bilder/frozen-vanilgurt.png",
+        "name": "Vanillejoghurt",
+        "preis": 2.00
+    }
+]

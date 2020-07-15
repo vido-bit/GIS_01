@@ -1,0 +1,101 @@
+@font-face {
+    font-family: "Frostbitten Wanker";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Frostbitten Wanker"), url("FROSW___.TTF") format("ttf");
+}
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+$iPadPro: 1080px;
+
+@mixin iPadPro {
+    @media (max-width: #{$iPadPro}) {
+        @content;
+    }
+}
+header {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+body {
+    width: 100%;
+    max-width: 1080px;
+    margin: auto;
+    background-color: #c4e4ffc5;
+}
+main{
+    margin: 10px;
+}
+h1 {
+    font-size: 5em;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    font-family: "Frostbitten Wanker";
+    display: flex;
+}
+h2 {
+    font-size: 3em;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    font-family: "Frostbitten Wanker";
+    display: flex;
+}
+h3 {
+    font-size: 1.7em;
+   // letter-spacing: -1px;
+    margin: auto;
+    justify-content: center;
+    position: relative;
+    font-family: "Quicksand" , "sans serif";
+    font-weight: 300;
+    display: flex;
+}
+
+#toppingsammlung {
+    width: 100%;
+   margin:  auto 20px;
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-gap: 10px;
+    
+    @include iPadPro {
+        display: inline-grid;
+        grid-template-columns: 24% 24% 24% 24% ;
+
+    }
+}
+.topping_img {
+    position: relative;
+    max-width: 100px;
+}
+#base {
+ position: absolute;
+   top: 120px;
+     left: 70%;
+    max-width:30%;
+    z-index: 5;
+    margin: 0 20px;;
+}
+#config{
+    max-width: 70%;
+    position: relative;
+    margin: auto;
+}
+.baseImg{
+    max-width: 100px;
+}
+#configbase{
+  //  position: absolute;
+}
+.topping-vorschau{
+    position: absolute;;
+    left: 0;
+}
+button{
+    width: 100px;
+    height: 25px;
+}
