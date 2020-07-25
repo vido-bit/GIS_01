@@ -2,13 +2,15 @@ namespace Freezer {
     
 
     export interface Topping {
-        img: string;
+        category: string;
+        bild: string;
         vorschau: string;
         name: string;
         preis: number;
     }
 
     export interface Yogurt {
+        category: string;
         img: string;
         name: string;
         preis: number;

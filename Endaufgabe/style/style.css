@@ -106,7 +106,7 @@ h3 {
   max-width: 100px;
 }
 
-.topping-vorschau {
+.toppings, .yogurt {
   position: absolute;
   left: 0;
 }

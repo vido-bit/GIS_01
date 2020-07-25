@@ -4,8 +4,10 @@ var Freezer;
     window.addEventListener("load", init);
     Freezer.jsonObj = [];
     Freezer.jsonBase = [];
+    let jsonYogurt;
     let toppingCart;
-    let yogurtBase = document.createElement("img");
+    let yogurtCart;
+    //let yogurtBase: HTMLImageElement = <HTMLImageElement>document.createElement("img");
     let configDiv = document.getElementById("config");
     let clearButton = document.querySelector("button");
     clearButton.addEventListener("click", onClickClear);
@@ -15,9 +17,9 @@ var Freezer;
         await Freezer.communicate("yogurtbases.json");
         createHTMLElements();
         function createHTMLElements() {
-            configDiv.appendChild(yogurtBase);
-            yogurtBase.setAttribute("src", "bilder/frozen-yogurt.png");
-            yogurtBase.setAttribute("id", "configbase");
+            // configDiv.appendChild(yogurtBase);
+            //yogurtBase.setAttribute("src", "bilder/frozen-yogurt.png");
+            //yogurtBase.setAttribute("id", "configbase");
             //  let toppingsammlung: HTMLDivElement = <HTMLDivElement>document.getElementById("toppingsammlung");
             let configBase = document.getElementById("base");
             for (let i = 0; i < Freezer.jsonBase.length; i++) {
@@ -43,13 +45,13 @@ var Freezer;
             for (let i = 0; i < Freezer.jsonObj.length; i++) {
                 //let keinFragezeichenOperator: HTMLElement = <HTMLElement>document.getElementById("topping" + i);
                 let toppingDiv = document.createElement("div");
-                toppingDiv.setAttribute("class", "toppings");
+                toppingDiv.setAttribute("class", "topping");
                 toppingDiv.setAttribute("id", "topping" + i);
                 document.getElementById("toppingsammlung")?.appendChild(toppingDiv);
                 toppingDiv.addEventListener("click", handleToppingClick.bind(Freezer.jsonObj[i]));
                 let toppingImg = document.createElement("img");
                 toppingImg.setAttribute("class", "topping_img");
-                toppingImg.setAttribute("src", (Freezer.jsonObj)[i].img);
+                toppingImg.setAttribute("src", (Freezer.jsonObj)[i].bild);
                 toppingImg.setAttribute("alt", "Topping Vorschau");
                 document.getElementById("topping" + i)?.appendChild(toppingImg);
                 let toppingHeading = document.createElement("h4");
@@ -65,7 +67,28 @@ var Freezer;
         }
     }
     function handleBaseClick(_click) {
+        //let yogurtKey: string = <string>localStorage.key("category")
+        //localStorage.removeItem("yogurt");
+        /*    if (document.getElementsByClassName("yogurt")) {
+                 localStorage.removeItem(this.category);
+               //  location.reload();
+             }
+             else {
+                 */
+        if (localStorage.length > 0) {
+            for (let i = 0; i < localStorage.length; i++) {
+                let toppingKey = localStorage.key(i);
+                let jsonString = localStorage.getItem(toppingKey);
+                jsonYogurt = JSON.parse(jsonString);
+            }
+        }
+        // console.log(jsonYogurt.name)
+        console.log(jsonYogurt.category);
+        if (jsonYogurt.category == "yogurt") {
+            localStorage.removeItem(jsonYogurt.category);
+        }
         chooseBaseFlavour(this);
+        buildVisualisierung();
     }
     function handleToppingClick(_click) {
         if (document.getElementById(this.name)) {
@@ -77,9 +100,16 @@ var Freezer;
             buildVisualisierung();
         }
     }
-    async function chooseBaseFlavour(_yogurt) {
-        console.log(JSON.stringify(_yogurt.name));
-        yogurtBase.setAttribute("src", _yogurt.img);
+    function chooseBaseFlavour(_yogurt) {
+        let yogurtStorage = JSON.stringify(_yogurt);
+        /* for (let i: number = 0; i < jsonBase.length; i++) {
+             localStorage.removeItem(_yogurt.category);
+         }
+         */
+        //yogurtBase.setAttribute("src", _yogurt.img);
+        localStorage.setItem(_yogurt.category, yogurtStorage);
+        console.log(localStorage);
+        // console.log(JSON.stringify(_yogurt.name));
     }
     async function addTopping(_topping) {
         /*  if (JSON.stringify(_topping)==toppingStorage)
@@ -91,24 +121,34 @@ var Freezer;
           */
         let toppingStorage = JSON.stringify(_topping);
         localStorage.setItem(_topping.name, toppingStorage);
-        console.log(localStorage);
+        //console.log(localStorage);
     }
     function buildVisualisierung() {
         for (let i = 0; i < localStorage.length; i++) {
             let toppingKey = localStorage.key(i);
             let jsonString = localStorage.getItem(toppingKey);
             toppingCart = JSON.parse(jsonString);
-            console.log(toppingCart);
+            yogurtCart = JSON.parse(jsonString);
+            // console.log(toppingCart);
+            // if (localStorage)
             let toppingPlus = document.createElement("img");
             // if (_topping.vorschau != toppingCart.vorschau) {
             //if (toppingPlus.getAttribute("src") != JSON.stringify(_topping.vorschau)) {
             // let removeTopping: HTMLImageElement = <HTMLImageElement>document.getElementById(_topping.name);
             configDiv.appendChild(toppingPlus);
-            console.log(toppingCart.name);
+            //console.log(toppingCart.name);
             toppingPlus.setAttribute("id", toppingCart.name);
             toppingPlus.setAttribute("src", toppingCart.vorschau);
             toppingPlus.setAttribute("alt", toppingCart.name);
-            toppingPlus.setAttribute("class", "topping-vorschau");
+            toppingPlus.setAttribute("class", toppingCart.category);
+            let yogurtChoice = document.createElement("img");
+            configDiv.appendChild(yogurtChoice);
+            yogurtChoice.setAttribute("id", yogurtCart.name);
+            yogurtChoice.setAttribute("src", yogurtCart.img);
+            yogurtChoice.setAttribute("alt", yogurtCart.name);
+            yogurtChoice.setAttribute("class", yogurtCart.category);
+            yogurtChoice.style.zIndex = "-5";
+            console.log(localStorage);
             /*             // else {
               localStorage.removeItem(toppingCart.name);
               location.reload();
@@ -118,8 +158,8 @@ var Freezer;
               console.log(_topping.name + " wurde entfernt");
           }
       }
-  
-  }
+     
+    }
                   * /
               /*      else {
                 localStorage.removeItem(_topping.name);

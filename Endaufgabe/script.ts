@@ -3,8 +3,10 @@ namespace Freezer {
     window.addEventListener("load", init);
     export let jsonObj: Topping[] = [];
     export let jsonBase: Yogurt[] = [];
+    let jsonYogurt: Yogurt;
     let toppingCart: Topping;
-    let yogurtBase: HTMLImageElement = <HTMLImageElement>document.createElement("img");
+    let yogurtCart: Yogurt;
+    //let yogurtBase: HTMLImageElement = <HTMLImageElement>document.createElement("img");
     let configDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("config");
     let clearButton: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button");
     clearButton.addEventListener("click", onClickClear);
@@ -17,9 +19,9 @@ namespace Freezer {
 
         function createHTMLElements(): void {
 
-            configDiv.appendChild(yogurtBase);
-            yogurtBase.setAttribute("src", "bilder/frozen-yogurt.png");
-            yogurtBase.setAttribute("id", "configbase");
+            // configDiv.appendChild(yogurtBase);
+            //yogurtBase.setAttribute("src", "bilder/frozen-yogurt.png");
+            //yogurtBase.setAttribute("id", "configbase");
 
 
             //  let toppingsammlung: HTMLDivElement = <HTMLDivElement>document.getElementById("toppingsammlung");
@@ -52,13 +54,13 @@ namespace Freezer {
                 //let keinFragezeichenOperator: HTMLElement = <HTMLElement>document.getElementById("topping" + i);
 
                 let toppingDiv: HTMLDivElement = <HTMLDivElement>document.createElement("div");
-                toppingDiv.setAttribute("class", "toppings");
+                toppingDiv.setAttribute("class", "topping");
                 toppingDiv.setAttribute("id", "topping" + i);
                 document.getElementById("toppingsammlung")?.appendChild(toppingDiv);
                 toppingDiv.addEventListener("click", handleToppingClick.bind(jsonObj[i]));
                 let toppingImg: HTMLImageElement = <HTMLImageElement>document.createElement("img");
                 toppingImg.setAttribute("class", "topping_img");
-                toppingImg.setAttribute("src", (jsonObj)[i].img);
+                toppingImg.setAttribute("src", (jsonObj)[i].bild);
                 toppingImg.setAttribute("alt", "Topping Vorschau");
                 document.getElementById("topping" + i)?.appendChild(toppingImg);
                 let toppingHeading: HTMLHeadingElement = <HTMLHeadingElement>document.createElement("h4");
@@ -75,9 +77,29 @@ namespace Freezer {
 
         }
     }
-
     function handleBaseClick(this: Yogurt, _click: Event): void {
+        //let yogurtKey: string = <string>localStorage.key("category")
+        //localStorage.removeItem("yogurt");
+        /*    if (document.getElementsByClassName("yogurt")) {
+                 localStorage.removeItem(this.category);
+               //  location.reload();
+             }
+             else {
+                 */
+        if (localStorage.length > 0) {
+            for (let i: number = 0; i < localStorage.length; i++) {
+                let toppingKey: string = <string>localStorage.key(i);
+                let jsonString: string = <string>localStorage.getItem(toppingKey);
+                jsonYogurt = <Yogurt>JSON.parse(jsonString);
+            }
+        }
+        // console.log(jsonYogurt.name)
+        console.log(jsonYogurt.category);
+        if (jsonYogurt.category == "yogurt") {
+            localStorage.removeItem(jsonYogurt.category);
+        }
         chooseBaseFlavour(this);
+        buildVisualisierung();
     }
     function handleToppingClick(this: Topping, _click: Event): void {
         if (document.getElementById(this.name)) {
@@ -89,10 +111,16 @@ namespace Freezer {
             buildVisualisierung();
         }
     }
-    async function chooseBaseFlavour(_yogurt: Yogurt): Promise<void> {
-        console.log(JSON.stringify(_yogurt.name));
-        yogurtBase.setAttribute("src", _yogurt.img);
-
+    function chooseBaseFlavour(_yogurt: Yogurt): void {
+        let yogurtStorage: string = JSON.stringify(_yogurt);
+        /* for (let i: number = 0; i < jsonBase.length; i++) {
+             localStorage.removeItem(_yogurt.category);
+         }
+         */
+        //yogurtBase.setAttribute("src", _yogurt.img);
+        localStorage.setItem(_yogurt.category, yogurtStorage);
+        console.log(localStorage);
+        // console.log(JSON.stringify(_yogurt.name));
     }
     async function addTopping(_topping: Topping): Promise<void> {
         /*  if (JSON.stringify(_topping)==toppingStorage)
@@ -106,28 +134,38 @@ namespace Freezer {
         let toppingStorage: string = JSON.stringify(_topping);
 
         localStorage.setItem(_topping.name, toppingStorage);
-        console.log(localStorage);
+        //console.log(localStorage);
 
     }
     function buildVisualisierung(): void {
-
 
         for (let i: number = 0; i < localStorage.length; i++) {
             let toppingKey: string = <string>localStorage.key(i);
             let jsonString: string = <string>localStorage.getItem(toppingKey);
             toppingCart = <Topping>JSON.parse(jsonString);
-            console.log(toppingCart);
-
+            yogurtCart = <Yogurt>JSON.parse(jsonString);
+            // console.log(toppingCart);
+            // if (localStorage)
             let toppingPlus: HTMLImageElement = <HTMLImageElement>document.createElement("img");
             // if (_topping.vorschau != toppingCart.vorschau) {
             //if (toppingPlus.getAttribute("src") != JSON.stringify(_topping.vorschau)) {
             // let removeTopping: HTMLImageElement = <HTMLImageElement>document.getElementById(_topping.name);
             configDiv.appendChild(toppingPlus);
-            console.log(toppingCart.name);
+            //console.log(toppingCart.name);
             toppingPlus.setAttribute("id", toppingCart.name);
             toppingPlus.setAttribute("src", toppingCart.vorschau);
             toppingPlus.setAttribute("alt", toppingCart.name);
-            toppingPlus.setAttribute("class", "topping-vorschau");
+            toppingPlus.setAttribute("class", toppingCart.category);
+
+
+            let yogurtChoice: HTMLImageElement = <HTMLImageElement>document.createElement("img");
+            configDiv.appendChild(yogurtChoice);
+            yogurtChoice.setAttribute("id", yogurtCart.name);
+            yogurtChoice.setAttribute("src", yogurtCart.img);
+            yogurtChoice.setAttribute("alt", yogurtCart.name);
+            yogurtChoice.setAttribute("class", yogurtCart.category);
+            yogurtChoice.style.zIndex = "-5";
+            console.log(localStorage);
             /*             // else {
               localStorage.removeItem(toppingCart.name);
               location.reload();
@@ -137,8 +175,8 @@ namespace Freezer {
               console.log(_topping.name + " wurde entfernt");
           }
       }
-  
-  }
+     
+    }
                   * /
               /*      else {
                 localStorage.removeItem(_topping.name);
