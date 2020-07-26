@@ -160,22 +160,7 @@ namespace Freezer {
     }
 
     function handleBaseClick(this: Topping, _click: Event): void {
-        //let yogurtKey: string = <string>localStorage.key("category")
-        //localStorage.removeItem("yogurt");
-        /*    if (document.getElementsByClassName("yogurt")) {
-                 localStorage.removeItem(this.category);
-               //  location.reload();
-             }
-             else {
-                 */
-        /*      if (localStorage.length > 0) {
-                  for (let i: number = 0; i < localStorage.length; i++) {
-                      let toppingKey: string = <string>localStorage.key(i);
-                      let jsonString: string = <string>localStorage.getItem(toppingKey);
-                      jsonYogurt = <Topping>JSON.parse(jsonString);
-                  }
-              }
-              */
+
         if (this.category == "yogurt") {
             localStorage.removeItem(this.category);
         }
