@@ -48,9 +48,9 @@ var Freezer;
             orderButton.setAttribute("type", "submit");
             orderButton.setAttribute("value", "Bestellung abschicken");
             orderButton.addEventListener("click", sendOrder);
-            let configBase = document.getElementById("base");
             for (let i = 0; i < Freezer.jsonObj.length; i++) {
                 if (Freezer.jsonObj[i].category == "yogurt") {
+                    let configBase = document.getElementById("base");
                     let baseDiv = document.createElement("div");
                     baseDiv.setAttribute("class", "bases");
                     baseDiv.setAttribute("id", "base" + i);

@@ -51,10 +51,10 @@ namespace Freezer {
             orderButton.setAttribute("value", "Bestellung abschicken");
             orderButton.addEventListener("click", sendOrder);
 
-            let configBase: HTMLDivElement = <HTMLDivElement>document.getElementById("base");
-
+            
             for (let i: number = 0; i < jsonObj.length; i++) {
                 if (jsonObj[i].category == "yogurt") {
+                    let configBase: HTMLDivElement = <HTMLDivElement>document.getElementById("base");
                     let baseDiv: HTMLDivElement = <HTMLDivElement>document.createElement("div");
                     baseDiv.setAttribute("class", "bases");
                     baseDiv.setAttribute("id", "base" + i);
