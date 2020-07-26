@@ -7,7 +7,6 @@
 }
 
 header {
-  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -35,6 +34,12 @@ h1 {
   display: flex;
 }
 
+@media (max-width: 568px) {
+  h1 {
+    font-size: 4em;
+  }
+}
+
 h2 {
   font-size: 3em;
   margin: auto;
@@ -55,11 +60,17 @@ h3 {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  font-family: "Quicksand" , "sans serif";
+  font-family: "Quicksand", "sans serif";
   font-weight: 300;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 568px) {
+  h3 {
+    font-size: 1.3em;
+  }
 }
 
 #toppingsammlung {
@@ -69,17 +80,24 @@ h3 {
   top: 500px;
   display: -ms-inline-grid;
   display: inline-grid;
-  -ms-grid-columns: 20% 20% 20% 20% 20%;
-      grid-template-columns: 20% 20% 20% 20% 20%;
+  -ms-grid-columns: 19% 19% 19% 19% 19%;
+      grid-template-columns: 19% 19% 19% 19% 19%;
   grid-gap: 10px;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1024px) {
   #toppingsammlung {
     display: -ms-inline-grid;
     display: inline-grid;
     -ms-grid-columns: 24% 24% 24% 24%;
         grid-template-columns: 24% 24% 24% 24%;
+  }
+}
+
+@media (max-width: 568px) {
+  #toppingsammlung {
+    -ms-grid-columns: 32% 32% 32%;
+        grid-template-columns: 32% 32% 32%;
   }
 }
 
@@ -91,10 +109,22 @@ h3 {
 #base {
   position: absolute;
   top: 120px;
-  left: 65%;
+  left: 70%;
   max-width: 30%;
   z-index: 5;
   margin: 0 20px;
+}
+
+@media (max-width: 1024px) {
+  #base {
+    left: 65%;
+  }
+}
+
+@media (max-width: 568px) {
+  #base {
+    top: 200px;
+  }
 }
 
 #config {
@@ -108,9 +138,26 @@ h3 {
   max-width: 100px;
 }
 
-.toppings, .yogurt {
+.toppings,
+.yogurt {
   position: absolute;
   left: 0;
+}
+
+@media (max-width: 1024px) {
+  .toppings,
+  .yogurt {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 568px) {
+  .toppings,
+  .yogurt {
+    max-width: 200px;
+    top: 100px;
+    left: -20px;
+  }
 }
 
 button {
@@ -123,7 +170,53 @@ input {
   margin: 5px;
 }
 
-#orderbtn {
-  font-size: 1em;
+#gesamtpreis {
+  float: left;
+  display: block;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#ordercry {
+  position: relative;
+  z-index: 50;
+  margin-bottom: 0px;
+}
+
+header nav {
+  position: relative;
+  left: 70%;
+  background-color: #557b9bc5;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: white;
+}
+
+@media (max-width: 568px) {
+  header nav {
+    padding: 5px 10px;
+    top: -2px;
+  }
+}
+
+@media (max-width: 568px) {
+  header nav a {
+    font-size: 0.8em;
+  }
+}
+
+img#memebild {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  max-width: 500px;
+}
+
+@media (max-width: 568px) {
+  img#memebild {
+    max-width: 300px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
