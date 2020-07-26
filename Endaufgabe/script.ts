@@ -112,7 +112,7 @@ namespace Freezer {
         getToAdminLink.setAttribute("href", "https://vido-bit.github.io/GIS_01/Endaufgabe/admin.html");
         getToAdminLink.setAttribute("target", "_blank");
         getToAdminLink.style.fontSize = "30px";
-        console.log(response);<
+        console.log(response);
     }
 
     function handleBaseClick(this: Topping, _click: Event): void {

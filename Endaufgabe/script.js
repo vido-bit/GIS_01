@@ -107,7 +107,6 @@ var Freezer;
         getToAdminLink.setAttribute("target", "_blank");
         getToAdminLink.style.fontSize = "30px";
         console.log(response);
-        ;
     }
     function handleBaseClick(_click) {
         //let yogurtKey: string = <string>localStorage.key("category")
