@@ -7,7 +7,6 @@ namespace Freezer {
     //let jsonYogurt: Topping;
     let toppingCart: Topping;
     let frozenYogurt: Topping;
-    let orderData: Topping;
     //   let yogurtCart: Yogurt;
     //let yogurtBase: HTMLImageElement = <HTMLImageElement>document.createElement("img");
     let configDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("config");
@@ -120,7 +119,7 @@ namespace Freezer {
                 yogurtInput.setAttribute("name", "Yogurt");
                 yogurtInput.setAttribute("value", frozenYogurt.name);
                 formForm.appendChild(yogurtInput).innerHTML = orderKey + yogurtInput.name;
-            //    yogurtInput.style.display = "none";
+                //    yogurtInput.style.display = "none";
             }
             if (frozenYogurt.category == "toppings") {
                 let toppingInput: HTMLInputElement = <HTMLInputElement>document.createElement("input");
@@ -133,7 +132,7 @@ namespace Freezer {
         let preisInput: HTMLInputElement = <HTMLInputElement>document.createElement("input");
         preisInput.setAttribute("name", "Gesamtpreis");
         preisInput.setAttribute("value", total.toLocaleString() + "€");
-      //  preisInput.style.display = "none";
+        //  preisInput.style.display = "none";
     }
     function orderEasterEgg(): void {
         orderCry.setAttribute("src", "bilder/order.jpg");
@@ -147,19 +146,13 @@ namespace Freezer {
         generateOrderContent();
         orderEasterEgg();
         let formData: FormData = new FormData(document.forms[0]);
-       // let url: string = "http://localhost:8100";
+        // let url: string = "http://localhost:8100";
         let url: string = "https://testservergis01.herokuapp.com";
-                // tslint:disable-next-line: no-any
+        // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/send" + "?" + query.toString();
-        for (let i: number = 0; i < localStorage.length; i++) {
-            let keyforOrder: string = <string>localStorage.key(i);
-            let jsonStringdingding: string = <string>localStorage.getItem(keyforOrder);
-            orderData = <Topping>JSON.parse(jsonStringdingding);
-            url += orderData.toString();
-        }
-       await fetch(url);
-        console.log(formData);
+        let response: Response = await fetch(url);
+        console.log(response);
     }
 
     function handleBaseClick(this: Topping, _click: Event): void {
