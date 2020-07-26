@@ -9,6 +9,7 @@ namespace Freezer {
     }
     async function handleOrder(): Promise<void> {
         let url: string = "https://testservergis01.herokuapp.com";
+       // let url: string = "http://localhost:8100";
         url += "/get";
         let response: Response = await fetch(url);
         let responseString: string = await response.text();

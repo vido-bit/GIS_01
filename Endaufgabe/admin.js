@@ -11,6 +11,7 @@ var Freezer;
     }
     async function handleOrder() {
         let url = "https://testservergis01.herokuapp.com";
+        // let url: string = "http://localhost:8100";
         url += "/get";
         let response = await fetch(url);
         let responseString = await response.text();

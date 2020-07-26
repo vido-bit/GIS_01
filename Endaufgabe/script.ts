@@ -11,7 +11,7 @@ namespace Freezer {
     //   let yogurtCart: Yogurt;
     //let yogurtBase: HTMLImageElement = <HTMLImageElement>document.createElement("img");
     let configDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("config");
-    let formDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("formdiv");
+    let formForm: HTMLFormElement = <HTMLFormElement>document.getElementById("formdiv");
     let total: number = 0;
     let gesamtPreis: HTMLHeadingElement = <HTMLHeadingElement>document.createElement("h4");
     let orderYT: HTMLAnchorElement = <HTMLAnchorElement>document.createElement("a");
@@ -25,39 +25,39 @@ namespace Freezer {
     function createHTMLElements(): void {
 
         let firstName: HTMLInputElement = <HTMLInputElement>document.createElement("input");
-        formDiv.appendChild(firstName);
+        formForm.appendChild(firstName);
         firstName.setAttribute("class", "formular");
         firstName.setAttribute("id", "firstname");
         firstName.setAttribute("placeholder", "Vorname");
         firstName.setAttribute("name", "Vorname");
         let lastName: HTMLInputElement = <HTMLInputElement>document.createElement("input");
-        formDiv.appendChild(lastName);
+        formForm.appendChild(lastName);
         lastName.setAttribute("class", "formular");
         lastName.setAttribute("id", "lastname");
         lastName.setAttribute("placeholder", "Nachname");
         lastName.setAttribute("name", "Nachname");
         let streetName: HTMLInputElement = <HTMLInputElement>document.createElement("input");
-        formDiv.appendChild(streetName);
+        formForm.appendChild(streetName);
         streetName.setAttribute("class", "formular");
         streetName.setAttribute("id", "streetname");
         streetName.setAttribute("placeholder", "Straße und Hasunummer");
         streetName.setAttribute("name", "Straße");
         let cityName: HTMLInputElement = <HTMLInputElement>document.createElement("input");
-        formDiv.appendChild(cityName);
+        formForm.appendChild(cityName);
         cityName.setAttribute("class", "formular");
         cityName.setAttribute("id", "cityname");
         cityName.setAttribute("placeholder", "Wohnort");
         cityName.setAttribute("name", "Wohnort");
-        formDiv.appendChild(gesamtPreis);
+        formForm.appendChild(gesamtPreis);
         gesamtPreis.setAttribute("id", "gesamtpreis");
         let orderButton: HTMLInputElement = <HTMLInputElement>document.createElement("input");
-        formDiv.appendChild(orderButton);
+        formForm.appendChild(orderButton);
         orderButton.setAttribute("id", "orderbtn");
         orderButton.setAttribute("type", "submit");
         orderButton.setAttribute("value", "Send Order!");
         orderButton.addEventListener("click", sendOrder);
         let clearButton: HTMLInputElement = <HTMLInputElement>document.createElement("input");
-        formDiv.appendChild(clearButton);
+        formForm.appendChild(clearButton);
         clearButton.setAttribute("id", "clearbtn");
         clearButton.setAttribute("type", "button");
         clearButton.setAttribute("value", "Zurücksetzen");
@@ -119,14 +119,14 @@ namespace Freezer {
                 let yogurtInput: HTMLInputElement = <HTMLInputElement>document.createElement("input");
                 yogurtInput.setAttribute("name", "Yogurt");
                 yogurtInput.setAttribute("value", frozenYogurt.name);
-                formDiv.appendChild(yogurtInput).innerHTML = orderKey + yogurtInput.name;
+                formForm.appendChild(yogurtInput).innerHTML = orderKey + yogurtInput.name;
             //    yogurtInput.style.display = "none";
             }
             if (frozenYogurt.category == "toppings") {
                 let toppingInput: HTMLInputElement = <HTMLInputElement>document.createElement("input");
                 toppingInput.setAttribute("name", "Yogurt");
                 toppingInput.setAttribute("value", frozenYogurt.name);
-                formDiv.appendChild(toppingInput).innerHTML = orderKey + toppingInput.name;
+                formForm.appendChild(toppingInput).innerHTML = orderKey + toppingInput.name;
                 //toppingInput.style.display = "none";
             }
         }
@@ -147,7 +147,7 @@ namespace Freezer {
         generateOrderContent();
         orderEasterEgg();
         let formData: FormData = new FormData(document.forms[0]);
-        //let url: string = "http://localhost:8100";
+       // let url: string = "http://localhost:8100";
         let url: string = "https://testservergis01.herokuapp.com";
                 // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
