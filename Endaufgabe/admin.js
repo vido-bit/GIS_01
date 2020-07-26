@@ -3,8 +3,8 @@ var Freezer;
 (function (Freezer) {
     window.addEventListener("load", init);
     let aktiveBestellungen = document.getElementById("bestellungen_aktiv");
-    let bearbeiteBestellungen = document.getElementById("bestellungen_inbearbeitung");
-    let abgeschlosseneBestellungen = document.getElementById("bestellungen_abgeschlossen");
+    //let bearbeiteBestellungen: HTMLDivElement = <HTMLDivElement>document.getElementById("bestellungen_inbearbeitung");
+    // let abgeschlosseneBestellungen: HTMLDivElement = <HTMLDivElement>document.getElementById("bestellungen_abgeschlossen");
     let memeDiv = document.getElementById("meme");
     function init() {
         handleOrder();

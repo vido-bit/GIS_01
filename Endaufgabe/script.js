@@ -155,11 +155,6 @@ var Freezer;
         }
         await fetch(url);
         console.log(formData);
-        /* let getToAdminLink: HTMLAnchorElement = <HTMLAnchorElement>document.createElement("a");
-         getToAdminLink.setAttribute("href", "https://vido-bit.github.io/GIS_01/Endaufgabe/admin.html");
-         getToAdminLink.setAttribute("target", "_blank");
-         console.log(response);
-    */
     }
     function handleBaseClick(_click) {
         //let yogurtKey: string = <string>localStorage.key("category")

@@ -158,14 +158,8 @@ namespace Freezer {
             orderData = <Topping>JSON.parse(jsonStringdingding);
             url += orderData.toString();
         }
-
-        await fetch(url);
+       await fetch(url);
         console.log(formData);
-        /* let getToAdminLink: HTMLAnchorElement = <HTMLAnchorElement>document.createElement("a");
-         getToAdminLink.setAttribute("href", "https://vido-bit.github.io/GIS_01/Endaufgabe/admin.html");
-         getToAdminLink.setAttribute("target", "_blank");
-         console.log(response);
-    */
     }
 
     function handleBaseClick(this: Topping, _click: Event): void {

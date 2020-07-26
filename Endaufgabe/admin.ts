@@ -1,8 +1,8 @@
 namespace Freezer {
     window.addEventListener("load", init);
     let aktiveBestellungen: HTMLDivElement = <HTMLDivElement>document.getElementById("bestellungen_aktiv");
-    let bearbeiteBestellungen: HTMLDivElement = <HTMLDivElement>document.getElementById("bestellungen_inbearbeitung");
-    let abgeschlosseneBestellungen: HTMLDivElement = <HTMLDivElement>document.getElementById("bestellungen_abgeschlossen");
+    //let bearbeiteBestellungen: HTMLDivElement = <HTMLDivElement>document.getElementById("bestellungen_inbearbeitung");
+   // let abgeschlosseneBestellungen: HTMLDivElement = <HTMLDivElement>document.getElementById("bestellungen_abgeschlossen");
     let memeDiv: HTMLDivElement = <HTMLDivElement>document.getElementById("meme");
     function init(): void {
         handleOrder();
