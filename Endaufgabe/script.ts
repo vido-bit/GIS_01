@@ -54,7 +54,7 @@ namespace Freezer {
         orderButton.setAttribute("id", "orderbtn");
         orderButton.setAttribute("type", "submit");
         orderButton.setAttribute("value", "Send Order!");
-        orderButton.addEventListener("click", sendOrder);
+        orderButton.addEventListener("click", sendButton);
         let clearButton: HTMLInputElement = <HTMLInputElement>document.createElement("input");
         formForm.appendChild(clearButton);
         clearButton.setAttribute("id", "clearbtn");
@@ -142,9 +142,13 @@ namespace Freezer {
         configDiv.appendChild(orderYT);
         orderYT.appendChild(orderCry);
     }
-    async function sendOrder(_click: Event): Promise<void> {
+    function sendButton(_click: Event): void {
         generateOrderContent();
         orderEasterEgg();
+        sendOrder();
+    }
+    async function sendOrder(): Promise<void> {
+
         let formData: FormData = new FormData(document.forms[0]);
         // let url: string = "http://localhost:8100";
         let url: string = "https://testservergis01.herokuapp.com";

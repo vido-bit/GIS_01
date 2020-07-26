@@ -53,7 +53,7 @@ var Freezer;
         orderButton.setAttribute("id", "orderbtn");
         orderButton.setAttribute("type", "submit");
         orderButton.setAttribute("value", "Send Order!");
-        orderButton.addEventListener("click", sendOrder);
+        orderButton.addEventListener("click", sendButton);
         let clearButton = document.createElement("input");
         formForm.appendChild(clearButton);
         clearButton.setAttribute("id", "clearbtn");
@@ -137,9 +137,12 @@ var Freezer;
         configDiv.appendChild(orderYT);
         orderYT.appendChild(orderCry);
     }
-    async function sendOrder(_click) {
+    function sendButton(_click) {
         generateOrderContent();
         orderEasterEgg();
+        sendOrder();
+    }
+    async function sendOrder() {
         let formData = new FormData(document.forms[0]);
         // let url: string = "http://localhost:8100";
         let url = "https://testservergis01.herokuapp.com";
