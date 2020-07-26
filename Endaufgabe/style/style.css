@@ -66,6 +66,7 @@ h3 {
   width: 100%;
   margin: auto 20px;
   position: relative;
+  top: 500px;
   display: -ms-inline-grid;
   display: inline-grid;
   -ms-grid-columns: 20% 20% 20% 20% 20%;
@@ -90,16 +91,17 @@ h3 {
 #base {
   position: absolute;
   top: 120px;
-  left: 70%;
+  left: 65%;
   max-width: 30%;
   z-index: 5;
   margin: 0 20px;
 }
 
 #config {
-  max-width: 70%;
+  max-width: 800px;
   position: relative;
-  margin: auto;
+  margin: -10% auto auto 20%;
+  z-index: 5;
 }
 
 .baseImg {
@@ -114,5 +116,14 @@ h3 {
 button {
   width: 100px;
   height: 25px;
+}
+
+input {
+  display: block;
+  margin: 5px;
+}
+
+#orderbtn {
+  font-size: 1em;
 }
 /*# sourceMappingURL=style.css.map */
