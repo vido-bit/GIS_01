@@ -161,8 +161,6 @@ namespace Freezer {
 
         await fetch(url);
         console.log(formData);
-
-        localStorage.clear();
         /* let getToAdminLink: HTMLAnchorElement = <HTMLAnchorElement>document.createElement("a");
          getToAdminLink.setAttribute("href", "https://vido-bit.github.io/GIS_01/Endaufgabe/admin.html");
          getToAdminLink.setAttribute("target", "_blank");
