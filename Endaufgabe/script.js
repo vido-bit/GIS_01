@@ -149,8 +149,7 @@ var Freezer;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url = url + "/send" + "?" + query.toString();
-        let response = await fetch(url);
-        console.log(response);
+        await fetch(url);
     }
     function handleBaseClick(_click) {
         if (this.category == "yogurt") {

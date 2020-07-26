@@ -155,8 +155,7 @@ namespace Freezer {
         // tslint:disable-next-line: no-any
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "/send" + "?" + query.toString();
-        let response: Response = await fetch(url);
-        console.log(response);
+        await fetch(url);
     }
 
     function handleBaseClick(this: Topping, _click: Event): void {
